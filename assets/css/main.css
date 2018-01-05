@@ -2200,19 +2200,40 @@
 					}
 
 			#main > section.cover {
-				padding: 6em 0;
-				background-size: cover;
-				background-position: center center;
+				
+				padding: 5em 0em 3em 3em;
+				background-color: #ffffff;
+			}
+			
+			#main > section.cover p {
+				text-align: left;			
+			}
+			#main > section.cover img{
+				float: right;
+				padding: 0 0 0 2em;
+			}
+			
+			#main > section.cover table {
+				text-align: left;			
 			}
 
+			
 			#main > section.one {
 				background-color: #81918E;
-				background-image: url("../../images/banner.jpg");
+				
 			}
 
 			#main > section.two {
 				background-color: #f5fafa;
 			}
+
+			#main > section.two p, h3, h4 {
+				text-align: left;
+								text-indent: -48px;
+				padding-left: 48px;
+			}
+
+			
 
 			#main > section.three {
 				background-color: #ecf1f1;
