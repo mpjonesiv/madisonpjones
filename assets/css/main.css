@@ -2211,6 +2211,8 @@
 			#main > section.cover img{
 				float: right;
 				padding: 0 0 0 2em;
+				 width: 18%;
+				height: auto;
 			}
 			
 			#main > section.cover table {
@@ -2283,6 +2285,17 @@
   			#main > section.cover table td:last-child {
     border-bottom: 0;
   }
+  
+  			#main > section.cover img{
+				float: right;
+				padding: 0 0 0 2em;
+				width: 45%;
+				height: auto;
+			}
+  
+  
+  
+  
 }
 			
 			#main > section.one {
