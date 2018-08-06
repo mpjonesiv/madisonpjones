@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+	<head>
+		<title>Visualizing Environments</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		
+<script>		// Find all YouTube videos
+var $allVideos = $("iframe[src^='//player.vimeo.com'], iframe[src^='//www.youtube.com']"),
+
+    // The element that is fluid width
+    $fluidEl = $("body");
+
+// Figure out and save aspect ratio for each video
+$allVideos.each(function() {
+
+  $(this)
+    .data('aspectRatio', this.height / this.width)
+
+    // and remove the hard coded width/height
+    .removeAttr('height')
+    .removeAttr('width');
+
+});
+
+// When the window is resized
+$(window).resize(function() {
+
+  var newWidth = $fluidEl.width();
+
+  // Resize all videos according to their own aspect ratio
+  $allVideos.each(function() {
+
+    var $el = $(this);
+    $el
+      .width(newWidth)
+      .height(newWidth * $el.data('aspectRatio'));
+
+  });
+
+// Kick off one resize to fix all videos on page load
+}).resize();
+		</script>
+	</head>
+	<body>
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#top">Overview</a></li>
+					<li><a href="#one">Assignments</a></li>
+					<li><a href="http://madisonpjones.com">Instructor Homepage</a></li>
+				</ul>
+			</nav>
+
+		<!-- Description -->
+			<div class="wrapper style1 first">
+				<article class="container" id="top">
+					<div class="row">
+						<div class="4u 12u(mobile)">
+							<span class="image fit"><img src="images/pic00.png" alt="Ozone hole image" title="Image of the largest Antarctic ozone hole ever recorded (September 2006), over the Southern pole."/></span>
+						</div>
+						<div class="8u 12u(mobile)">
+							<header>
+								<h1><strong>Visualizing Environments</strong></h1>
+							</header>
+							<p>This Writing throuh Media course at the Univeristy of Florida draws upon methodologies from visual and digital rhetoric, paired with topics from sustainability and ecocomposition, to teach students how social issues are visualized online and how to use digital mapping, augmented reality, and image tracking for public writing and advocacy. As such, we focus on digital representations of the environment. Readings include work in technology, science, popular culture, and the humanities.</p>
+							
+						</div>
+                    
+                        <div class="12u 12u(mobile)">
+							<header>
+								<h1><strong>Course Materials</strong></h1>
+							</header>
+							<ul>
+                            <lh><strong>Required Texts</strong></lh>
+                              <li><i>White Noise</i>. Don Delillo. Penguin Classics, 2009.</li>
+                              <li><i>Sustainability: A Reader for Writers</i>. Carl Herndl (Ed) Oxford UP, 2013 (Couse readings are all available as open-access texts online).</li>
+                            <li>Daily access to your university email.</li>
+                            </ul>
+                            
+                            <ul>
+                            <lh><strong>Open-Access eTexts</strong></lh>
+                                <li><i>Visualizing Information for Advocacy</i>. Tactical Technology Collective, 2014 (Online at <a href="https://visualisingadvocacy.org" target="_blank">Visualisingadvocacy.org</a>).</li>
+                            
+                                <li><i>Writing Spaces: Readings on Writing</i>. Charles Lowe and Pavel Zemliansky (Eds.) Parlor Press, 2010 (Online at <a href="http://writingspaces.org" target="_blank"> Writingspaces.org</a>).</li>
+                            <li><i>Web Writing Style Guide.</i>. Matt Barton, James Kalmbach, and Charles Lowe (Eds.) Parlor Press, 2010 (Online at <a href="http://writingspaces.org" target="_blank"> Writingspaces.org</a>).</li>
+                            </ul>
+                            
+
+                            
+                            
+						</div>
+                        <div class="12u 12u(mobile)">
+							<header>
+								<h1><strong>Course Outcomes</strong></h1>
+                            </header>
+                                <p><strong>Content:</strong> Students demonstrate competence in the terminology, concepts, theories and methodologies used within the environmental and digital humanities.</p>
+                                
+                                <p><strong>Communication:</strong> Students communicate knowledge, ideas and reasoning clearly and effectively across modalities. Students will participate in classdiscussions throughout the semester to reflect on assigned readings.</p>
+                                
+                                <p><strong>Critical Thinking:</strong> Students analyze information carefully andlogically from multiple perspectives, using discipline-specificmethods, and develop reasoned solutions to problems.</p>
+                            
+                                <p><strong>Design:</strong> Students work individually and in groups to build, workshop, and usability test rhetorically compelling digital projects.</p>
+                                
+                                <p><strong>Research & Write:</strong> Students select a research topic which they will focus on throughout the semester. The ideal topic will connect projects to individual professional, civic, personal, or academic interests.</p>
+
+
+						</div>
+					</div>
+				</article>
+			</div>
+
+		<!-- Calendar -->
+<div class="wrapper style1">
+				<article class="container" id="one">
+					<div class="row">
+                        <div class="4u 12u(mobile)">
+							<span class="image fit"><img src="images/network.gif" alt="Ozone hole image" title="Map of the deadzone in the gulf of mexico."/></span>
+						</div>
+                        <div class="8u 12u(mobile)">
+							<header>
+								<h1><strong>Class Blogs</strong></h1>
+							</header>
+							<p>
+                                 Throughout the semester, students write analytical responses to readings, class discussions, or other relevant topics. We will read and follow environmental blogs and discuss the genre in relation to environmental advocacy. Students are required to read and respond to their classmates' posts.
+                            </p>
+				        </div>
+    
+                       
+                        
+                        
+						<div class="4u 12u(mobile)">
+							<span class="image fit"><img src="images/deadzone.jpg" alt="Ozone hole image" title="Map of the deadzone in the gulf of mexico."/></span>
+						</div>
+                        <div class="8u 12u(mobile)">
+							<header>
+								<h1><strong>Unit 1: Mapping</strong></h1>
+							</header>
+							<p>
+                                In this unit, we will discuss the role of mapping technologies in the representation of enviornmental disasters. We will discuss topics such as deep mapping, bioregionalism, and ground-truthing, as well as look at examples like Sean Morey's digital map "<a href="http://kairos.technorhetoric.net/21.2/topoi/morey/index.html" target="_blank">The Roadkill Tollbooth</a>".
+                            </p>
+                            <p>
+                                For this assignment, students will work with Google Maps to create a visualization of an environmental crisis, event, or problem.
+                            </p>
+				        </div>
+    
+                        <div class="4u 12u(mobile)">
+							<span class="image fit"><img src="images/matthewskull.jpg" alt="Ozone hole image" title="Image of the largest Antarctic ozone hole ever recorded (September 2006), over the Southern pole."/></span>
+						</div>
+						<div class="8u 12u(mobile)">
+							<header>
+								<h1><strong>Unit 2: Image Tracking</strong></h1>
+							</header>
+							<p>In this unit, we will discuss visual representations of environments, disasters, and issues. We will discuss visual rhetoric and design in relation to environmental advocacy.</p>
+                            <p>For this project, students will use Zotero to track the circulation of an iconic representation of ecology or an environmental image (what Sean Morey calls an “econ”) using Laurie Gries’ iconographic tracking method. Students submit a paper describing their research, methodology, and analysis.
+				        </div>
+                        <div class="4u 12u(mobile)">
+							<span class="image fit"><img src="images/borderfronteras.jpg" alt="Ozone hole image" title="Image of the largest Antarctic ozone hole ever recorded (September 2006), over the Southern pole."/></span>
+						</div>
+						<div class="8u 12u(mobile)">
+							<header>
+								<h1><strong>Unit 3: Augmented Reality</strong></h1>
+							</header>
+							<p>This unit will examine augmented reality technologies as a tool for advocacy. Like the mapping project, students will discuss a range of issues and applications invovling augmented reality, building from our previous conversations about visual rhetoric.
+                            </p>
+                            <p>
+                                For this assignment, students will work with HP Reveal to create an augmented visualization of an environmental crisis, event, or problem.
+                            </p>
+				        </div>
+                        <div class="4u 12u(mobile)">
+							<span class="image fit"><img src="images/webdesign.jpg" alt="Ozone hole image" title="Image of the largest Antarctic ozone hole ever recorded (September 2006), over the Southern pole."/></span>
+						</div>
+						<div class="8u 12u(mobile)">
+							<header>
+								<h1><strong>Unit 4: Web Design</strong></h1>
+							</header>
+							<p>
+                                The final project will connect the previous work in the class into a WIX website documenting their class topic through careful research. Students may choose to build an informational, argumentative website (akin to a tradtional research paper), or they may develop a MEmorial as described by Gregory Ulmer in <i>Electronic Monuments</i>. Websites are written in a descriptive, analytical, reflective, and persuasive manner. We will workshop and usability test websites as a class. 
+                            </p>
+                            
+				        </div>
+					</div>
+				</article>
+			</div>
+
+		<!-- Portfolio 
+			<div class="wrapper style3">
+				<article id="portfolio">
+					<header>
+						<h2>Course Assignments</h2>
+						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat lorem ipsum dolore.</p>
+					</header>
+					<div class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+									<h3><a href="#">Magna feugiat</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+									<h3><a href="#">Veroeros primis</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+									<h3><a href="#">Lorem ipsum</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+						</div>
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+									<h3><a href="#">Tempus dolore</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+									<h3><a href="#">Feugiat aliquam</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+									<h3><a href="#">Sed amet ornare</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+						</div>
+					</div>
+					
+				</article>
+			</div>
+                                SECTION COMMENTED OUT-->
+
+		<!-- Contact -->
+			<div class="wrapper style4">
+				<article id="contact">
+					
+					<footer>
+						<!-- Copyright -->
+					<ul class="copyright">
+						<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Madison Jones. Some rights reserved.</li>
+					</ul>
+					</footer>
+				</article>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/skel-viewport.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
