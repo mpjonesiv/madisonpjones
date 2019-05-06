@@ -2888,18 +2888,15 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 2em 0 9em 0;
-		background-image: url(images/bathouse.jpg);
-        background-repeat: no-repeat;
-        background-position: center; 
+		padding: 9em 0 9em 0 ;
+		background-color: #4686a0;
+		color: rgba(255, 255, 255, 0.75);
+		background: url(images/bathouse.jpg) no-repeat center center fixed; 
         background-size: cover;
+		overflow: hidden;
+		position: relative;
 		text-align: center;
-        
-        
 	}
-
-        
-       
 
 		#header a {
 			border-bottom-color: rgba(255, 255, 255, 0.5);
@@ -2985,7 +2982,7 @@ input, select, textarea {
 		#header h1 {
 			margin: 0;
 		}
-		
+
 		#header p {
 			margin: 1em 0 0 0;
 		}
