@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <!--Favicon -->
+            <link rel="icon" type="image/png" href="../images/favicon.png" />
+            
+            <title>Madison P. Jones</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="../assets/main.css">
+            <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+            <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+            
+        </head>
+        
+        <body>
+            <!--Header -->
+            <div class="header">
+                <div class="headrow">
+                    <div class="headmain">
+                        <h1>Madison P. Jones</h1>
+                    </div>
+                    <div class="headside">
+                        <h3>PhD Candidate, Rhetoric &amp; Writing Studies</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div id="navbar">
+                <a href="../index.html"> ABOUT</a>
+                <a href="research.html">RESEARCH</a>
+                <a class="active" href="teaching.html">TEACHING</a>
+                <a href="projects.html">PROJECTS</a>
+                <a href="cv.html">CURRICULUM VITAE</a>
+                <a href="http://madisonpjones.com/poet" target="_blank">POETRY &nbsp;&nbsp;<i class="fas fa-external-link-alt"></i></a>
+            </div>
+
+            
+            <!-- Body 2-colum layout -->
+            <div class="row">
+                <div class="main">
+                    <h1>Teaching</h1>
+                    <p>
+				     This page is under construction. Check back soon.
+                    </p>
+                    
+                  
+                </div>
+                
+                <div class="side">
+                    <div id="iconcenter">
+                        <i title="Twitter"><a href="http://twitter.com/poetrhetor" class="fab fa-twitter ai-2x"></a></i>
+                        <i title="Research Gate"><a href="https://www.researchgate.net/profile/Madison_Jones_Iv" class="ai ai-researchgate-square ai-2x"></a></i>
+                        <i title="ORCID"><a href="https://orcid.org/0000-0003-2970-7934" class="ai ai-orchid-square ai-2x"></a></i>
+                        <i title="Google Scholar"><a href="https://scholar.google.com/citations?user=Oc09ecMAAAAJ&hl=en" class="ai ai-google-scholar-square ai-2x"></a></i>
+                        <i title="Academia.edu"><a href="https://florida.academia.edu/MadisonJones" class="ai ai-academia-square ai-2x"></a></i>
+                        <i title="Email"><a href="mailto:madisonjones@ufl.edu" class="fas fa-envelope ai-2x"></a></i>
+                    </div>
+                        
+                    <br>
+                    <a class="twitter-timeline" href="https://twitter.com/poetrhetor" data-tweet-limit="3">Tweets by poetrhetor</a> <script async src="https://platform.twitter.com/widgets.js"></script>
+                </div>
+           </div>
+            
+            
+            
+            
+            
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div id="iconcenter">
+                    <i title="Twitter"><a href="http://twitter.com/poetrhetor" class="fab fa-twitter ai-2x"></a></i>
+                    <i title="Research Gate"><a href="https://www.researchgate.net/profile/Madison_Jones_Iv" class="ai ai-researchgate-square ai-2x"></a></i>
+                    <i title="ORCID"><a href="https://orcid.org/0000-0003-2970-7934" class="ai ai-orchid-square ai-2x"></a></i>
+                    <i title="Google Scholar"><a href="https://scholar.google.com/citations?user=Oc09ecMAAAAJ&hl=en" class="ai ai-google-scholar-square ai-2x"></a></i>
+                    <i title="Academia.edu"><a href="https://florida.academia.edu/MadisonJones" class="ai ai-academia-square ai-2x"></a></i>
+                    <i title="Email"><a href="mailto:madisonjones@ufl.edu" class="fas fa-envelope ai-2x"></a></i>                
+                </div>
+                <p>Web design, code, and layout by Madison Jones. <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Some Rights Reserved.</a></p>
+            </footer>  
+            
+            
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+<script>window.onresize = function(){ location.reload(); }
+</script>
+        </body>
+    </html>

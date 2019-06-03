@@ -1,0 +1,260 @@
+/* ------------------Entire Website------------------ */
+
+	body {
+		background: #fff;
+		font-family: 'Roboto', sans-serif;
+		line-height: 1.85em;
+		color:grey;
+        padding-top: 10px;
+        padding-left: 5%;
+                    
+	}
+
+p{
+    padding-right: 6%;
+    font-size: 20px
+    
+}
+
+ul {
+        font-size: 18px
+}
+h1 {
+    color:black;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+/* Change color on hover/mouse-over */
+a:hover {
+  color: darkseagreen; /* Dark green text color */
+  
+}
+
+/* ------------------Icons------------------ */
+
+#iconcenter{
+    text-align: center;
+    
+}
+
+
+/* ------------------Images------------------ */
+.left {
+float: left;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+
+
+/* ------------------Header------------------ */
+.header {
+  padding: 10px; /* some padding */
+  text-align: center; /* center the text */
+  color: black;
+}
+
+/* Increase the font size of the <h1> element */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Column container */
+.headrow { 
+    
+    display: flex;
+    align-items: baseline;
+    
+    
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Main column */
+.headmain { 
+padding-left: 1%;
+padding-right: 4%;
+ 
+  
+}
+
+/* Sidebar/right column */
+.headside {
+
+padding-right: 5%;
+
+}
+
+
+
+
+/* ------------------Navigation Bar------------------ */
+/* Style the top navigation bar */
+#navbar {
+  overflow: hidden; /* Hide overflow */
+  background-color: #333; /* Dark background color */
+    font-size: large;
+}
+
+/* Style the navigation bar links */
+#navbar a {
+  float: left; /* Make sure that the links stay side-by-side */
+  display: block; /* Change the display to block, for responsive reasons (see below) */
+  
+    color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 14px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline */
+}
+
+a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/* Change color on hover/mouse-over */
+#navbar a:hover {
+  background-color: darkseagreen; /* Grey background color */
+  color: black; /* Black text color */
+}
+
+
+
+
+/* ------------------Body Layout 2-column------------------ */
+/* Ensure proper sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Column container */
+.row { 
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Main column */
+.main { 
+  flex: 80%; /* Set the width of the main content */
+  background-color: white; /* White background color */
+  padding: 20px; /* Some padding */
+}
+
+/* Sidebar/right column */
+.side {
+  flex: 20%; /* Set the width of the sidebar */
+  background-color: #f1f1f1; /* Grey background color */
+  padding: 20px; /* Some padding */
+}
+
+/* ------------------Responsive Layout------------------ */
+/* Responsive body - when the screen is less than 1152px wide, hide the second column */
+@media only screen and (max-width: 1275px) {
+    .side {display: none;
+        }
+}
+
+/* Responsive header - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .headrow { 
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* ------------------Footer------------------ */
+.footer {
+  padding: 20px; /* Some padding */
+  text-align: center; /* Center text*/
+  background: #f1f1f1;
+    color: black;
+}
+
+
+/* ------------------Animated Collapsible Dropdowns------------------ */
+#dropdown .collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+}
+
+#dropdown .active, .collapsible:hover {
+  background-color: #555;
+}
+
+#dropdown .collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+#dropdown .active:after {
+  content: "\2212";
+}
+
+#dropdown .content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+#dropdown {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.dropcolumn {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  
+}
+
+/* Clear floats after the columns */
+.droprow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .dropcolumn {
+    width: 100%;
+  }
+}
+

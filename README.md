@@ -1,2 +1,0 @@
-# madisonpjones
-professional website
