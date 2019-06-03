@@ -119,17 +119,17 @@ padding-right: 5%;
 }
 
 /* If the screen size is between 601 and 1024, set the font-size to medium */
-@media screen and (min-width : 651px) and  (max-width : 1000px) {
+@media screen and (min-width : 677px) and  (max-width : 1000px) {
     
 #navbar a {
       padding: 14px 20px; /* Add some padding */
-      font-size: 14px;
+      font-size: 15px;
   }
 }
 
 
 /* If the screen size is 600px wide or less, set the font-size to small */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 676px) {
   #navbar a {
       font-size: 12px;
       padding: 7px 12px; /* Add some padding */
