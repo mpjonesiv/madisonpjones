@@ -184,6 +184,10 @@ a.active {
     float: none;
     width: 100%;
   }
+    .body {
+        padding-left: none;
+        padding-top: none;
+    }
 }
 
 /* ------------------Footer------------------ */
