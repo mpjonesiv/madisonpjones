@@ -105,8 +105,35 @@ padding-right: 5%;
   
     color: white; /* White text color */
   text-align: center; /* Center the text */
-  padding: 14px 20px; /* Add some padding */
+  
   text-decoration: none; /* Remove underline */
+}
+
+
+/* If the screen size is 1025px wide or more, set the menu font-size to large */
+@media screen and (min-width: 1001px) {
+  #navbar a {
+      padding: 14px 20px; /* Add some padding */
+      font-size: 20px;
+  }
+}
+
+/* If the screen size is between 601 and 1024, set the font-size to medium */
+@media screen and (min-width : 651px) and  (max-width : 1000px) {
+    
+#navbar a {
+      padding: 14px 20px; /* Add some padding */
+      font-size: 14px;
+  }
+}
+
+
+/* If the screen size is 600px wide or less, set the font-size to small */
+@media screen and (max-width: 650px) {
+  #navbar a {
+      font-size: 12px;
+      padding: 7px 12px; /* Add some padding */
+  }
 }
 
 a.active {
@@ -184,10 +211,6 @@ a.active {
     float: none;
     width: 100%;
   }
-    .body {
-        padding-left: none;
-        padding-top: none;
-    }
 }
 
 /* ------------------Footer------------------ */
