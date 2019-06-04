@@ -132,8 +132,8 @@ padding-right: 5%;
 @media screen and (min-width : 415px) and  (max-width : 677px) {
     
 #navbar a {
-      padding: 8px 12px; /* Add some padding */
-      font-size: 14px;
+      padding: 7px 11px; /* Add some padding */
+      font-size: 13px;
   }
 }
 
