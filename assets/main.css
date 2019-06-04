@@ -118,22 +118,22 @@ padding-right: 5%;
 }
 
 /* If the screen size is between 601 and 1000, set the font-size to medium */
-@media screen and (min-width : 677px) and  (max-width : 1000px) {
+@media screen and (min-width : 678px) and  (max-width : 1000px) {
     
 #navbar a {
       padding: 14px 20px; /* Add some padding */
-      font-size: 15px;
+      font-size: 16px;
   }
 }
 
 
 
 /* If the screen size is between 415 and 676, set the font-size to small */
-@media screen and (min-width : 415px) and  (max-width : 676px) {
+@media screen and (min-width : 415px) and  (max-width : 677px) {
     
 #navbar a {
       padding: 8px 12px; /* Add some padding */
-      font-size: 12px;
+      font-size: 14px;
   }
 }
 
@@ -142,7 +142,7 @@ padding-right: 5%;
 /* If the screen size is 414x wide or less, set the font-size to tiny */
 @media screen and (max-width: 676px) {
   #navbar a {
-      font-size: 10px;
+      font-size: 12px;
       padding: 4px 6px; /* Add some padding */
   }
 }
@@ -203,7 +203,7 @@ a.active {
 }
 
 /* ------------------Responsive Layout------------------ */
-/* Responsive body - when the screen is less than 1152px wide, hide the second column */
+/* Responsive body - when the screen is less than 1275px wide, hide the second column */
 @media only screen and (max-width: 1275px) {
     .side {display: none;
         }
@@ -214,6 +214,12 @@ a.active {
   .headrow { 
     flex-direction: column;
   }
+p{
+    font-size: 18px
+}
+ul {
+    
+    font-size: 16px}
 }
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
@@ -222,6 +228,17 @@ a.active {
     float: none;
     width: 100%;
   }
+    p{
+    font-size: 15px
+}
+ul {
+    
+    font-size: 12px}
+}
+img {width: 40%;
+    
+}
+
 }
 
 /* ------------------Footer------------------ */
@@ -278,7 +295,7 @@ a.active {
 .dropcolumn {
   float: left;
   width: 50%;
-  padding: 10px;
+  padding: 2%;
   
 }
 
