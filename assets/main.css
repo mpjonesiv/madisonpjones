@@ -33,6 +33,10 @@ a:hover {
   color: darkseagreen; /* Dark green text color */
   
 }
+img {
+    max-width: 200px;
+    
+}
 
 /* ------------------Icons------------------ */
 
@@ -135,6 +139,7 @@ padding-right: 5%;
       padding: 8px 12px; /* Add some padding */
       font-size: 14px;
   }
+
 }
 
 
@@ -142,8 +147,8 @@ padding-right: 5%;
 /* If the screen size is 414x wide or less, set the font-size to tiny */
 @media screen and (max-width: 676px) {
   #navbar a {
-      font-size: 11px;
-      padding: 3px 5px; /* Add some padding */
+      font-size: 12px;
+      padding: 4px 6px; /* Add some padding */
   }
 }
 
@@ -215,12 +220,14 @@ a.active {
     flex-direction: column;
   }
 p{
-    font-size: 18px
+    font-size: 18px;
 }
 ul {
     
-    font-size: 16px}
+    font-size: 16px;
+    }
 }
+
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
