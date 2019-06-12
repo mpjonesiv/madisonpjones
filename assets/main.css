@@ -178,6 +178,36 @@ a.active {
 }
 
 
+/* ------------------Navigation Dropdown Button------------------ */
+
+
+
+.dropdown-content {
+  display: none;
+
+}
+
+
+
+
+
+
+/* Responsive dropdown - when the screen is less than 1200px wide, hide the dropdown */
+@media only screen and (min-width: 1200px) {
+    .dropdown:hover .dropdown-content {
+    
+    display: block;
+
+    }
+
+
+/* Responsive dropdown - when the screen is less than 1200px wide, hide the dropdown */
+@media only screen and (max-width: 100px) {
+    .dropdown-content {
+        display: none;
+}
+
+
 
 
 /* ------------------Body Layout 2-column------------------ */
@@ -246,7 +276,6 @@ img {width: 40%;
     
 }
 
-}
 
 /* ------------------Footer------------------ */
 .footer {
