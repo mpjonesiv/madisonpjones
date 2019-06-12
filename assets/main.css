@@ -178,33 +178,29 @@ a.active {
 }
 
 
-/* ------------------Navigation Dropdown Button------------------ */
+/* ------------------Dropnav Menu Navigation Button------------------ */
 
 
 
-.dropdown-content {
+.dropnav-content {
   display: none;
 
 }
 
 
-
-
-
-
-/* Responsive dropdown - when the screen is less than 1200px wide, hide the dropdown */
+/* Responsive dropnav - when the screen is less than 1200px wide, hide the dropdown */
 @media only screen and (min-width: 1200px) {
-    .dropdown:hover .dropdown-content {
-    
+    .dropnav:hover .dropnav-content {    
     display: block;
 
     }
+}
 
-
-/* Responsive dropdown - when the screen is less than 1200px wide, hide the dropdown */
-@media only screen and (max-width: 100px) {
-    .dropdown-content {
+/* Responsive dropnav - when the screen is less than 1200px wide, hide the dropdown */
+@media only screen and (max-width: 1000px) {
+    .dropnav-content {
         display: none;
+    }
 }
 
 
