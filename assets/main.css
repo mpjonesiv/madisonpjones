@@ -173,7 +173,7 @@ a.active {
 
 /* Change color on hover/mouse-over */
 #navbar a:hover {
-  background-color: darkseagreen; /* Grey background color */
+  background-color: darkseagreen; 
   color: black; /* Black text color */
 }
 
