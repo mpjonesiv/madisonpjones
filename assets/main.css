@@ -92,7 +92,6 @@ padding-right: 5%;
 
 
 
-
 /* ------------------Navigation Bar------------------ */
 /* Style the top navigation bar */
 #navbar {
@@ -102,7 +101,7 @@ padding-right: 5%;
 }
 
 /* Style the navigation bar links */
-#navbar a {
+#navbar > a {
   float: left; /* Make sure that the links stay side-by-side */
   display: block; /* Change the display to block, for responsive reasons (see below) */
   
@@ -112,12 +111,38 @@ padding-right: 5%;
   text-decoration: none; /* Remove underline */
 }
 
+.dropnav {
+  float: left;
+    
+}
+
+.dropnav > a {
+  float: none;
+  display: inline-block;
+    text-decoration: none;
+    color: white; 
+}
+
+.dropnav-content {
+  position: absolute;
+  clear: both;
+}
+
+.dropnav-content a {
+  float: none;
+  text-decoration: none;
+    color: white; /* White text color */
+  display: block;
+  text-align: left;
+  background-color: grey;
+}
+
 
 /* If the screen size is 1000px wide or more, set the menu font-size to large */
 @media screen and (min-width: 1001px) {
   #navbar a {
       padding: 14px 20px; /* Add some padding */
-      font-size: 20px;
+      font-size: 22px;
   }
 }
 
@@ -126,7 +151,7 @@ padding-right: 5%;
     
 #navbar a {
       padding: 14px 20px; /* Add some padding */
-      font-size: 16px;
+      font-size: 18px;
   }
 }
 
@@ -137,7 +162,7 @@ padding-right: 5%;
     
 #navbar a {
       padding: 8px 12px; /* Add some padding */
-      font-size: 14px;
+      font-size: 17px;
   }
 
 }
@@ -147,7 +172,7 @@ padding-right: 5%;
 /* If the screen size is 414x wide or less, set the font-size to tiny */
 @media screen and (max-width: 676px) {
   #navbar a {
-      font-size: 12px;
+      font-size: 15px;
       padding: 4px 6px; /* Add some padding */
   }
 }
@@ -173,7 +198,7 @@ a.active {
 
 /* Change color on hover/mouse-over */
 #navbar a:hover {
-  background-color: darkseagreen; 
+  background-color: darkseagreen; /* Grey background color */
   color: black; /* Black text color */
 }
 
@@ -202,7 +227,6 @@ a.active {
         display: none;
     }
 }
-
 
 
 
