@@ -286,7 +286,7 @@ ul {
     width: 100%;
   }
     p{
-    font-size: 15px
+    font-size: 14px
 }
 ul {
     
@@ -313,7 +313,7 @@ img {width: 40%;
   cursor: pointer;
   padding: 18px;
   width: 100%;
-  border: none;
+  border: 5px solid;
   text-align: left;
   outline: none;
   font-size: 20px;
