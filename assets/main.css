@@ -172,7 +172,7 @@ padding-right: 5%;
 /* If the screen size is 414x wide or less, set the font-size to tiny */
 @media screen and (max-width: 676px) {
   #navbar a {
-      font-size: 15px;
+      font-size: 13px;
       padding: 4px 6px; /* Add some padding */
   }
 }
