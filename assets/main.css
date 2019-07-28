@@ -90,6 +90,8 @@ padding-right: 5%;
 
 }
 
+/* ------------------Anchor Tags------------------ */
+a.anchor{display: block; position: relative; top: -100px; visibility: hidden;}
 
 
 /* ------------------Navigation Bar------------------ */
