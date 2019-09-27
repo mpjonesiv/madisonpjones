@@ -52,8 +52,14 @@ float: left;
     padding-top: 10px;
     padding-right: 25px;
     padding-bottom: 5px;
+    text-align: center;
 }
-
+.leftcaption{
+    font-size: 70%;
+    line-height: normal;
+    text-align: center;
+    
+}
 
 /* ------------------Header------------------ */
 .header {
