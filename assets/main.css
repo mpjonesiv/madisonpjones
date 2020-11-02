@@ -10,11 +10,13 @@
                     
 	}
 
-p{
+p, dd, dt {
     padding-right: 6%;
     font-size: 20px
     
 }
+
+
 
 ul {
         font-size: 18px
@@ -283,7 +285,7 @@ a.active {
   .headrow { 
     flex-direction: column;
   }
-p{
+p, dd, dt{
     font-size: 18px;
 }
 ul {
@@ -299,7 +301,7 @@ ul {
     float: none;
     width: 100%;
   }
-    p{
+    p, dd, dt{
     font-size: 14px
 }
 ul {
