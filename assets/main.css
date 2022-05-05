@@ -425,3 +425,27 @@ img {width: 40%;
   }
 }
 
+
+
+
+
+/* ------------------Landing Page------------------ */
+
+.bannerbutton {
+
+
+  color:#fff;
+  border-color:#18ab29;
+  border-top-left-radius:28px;
+  border-top-right-radius:28px;
+  border-bottom-left-radius:28px;
+  border-bottom-right-radius:28px;
+  background:#4CAF50;
+}
+
+.bannerbutton:hover {
+  background-color: darkseagreen;
+    color: black;
+}
+
+
