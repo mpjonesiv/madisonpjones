@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="https://kit.fontawesome.com/7a71c577b7.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <style>
+      #map {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
+    </style>
+  </head>
+  <body>
+    <div id="map">
+      <a href="https://www.maptiler.com" style="position:absolute;left:10px;bottom:10px;z-index:999;"><img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler logo"></a>
+    </div>
+    <p><a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a></p>
+    <script>
+      var map = L.map('map').setView([41.185192, -71.574741], 13);
+      
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        const fontAwesomeIcon = L.divIcon({
+        html: '<i class="fa-solid fa-mobile-screen fa-3x" style="color:#2981CA"></i>',
+        iconSize: [20, 20],
+        className: 'myDivIcon'
+        });
+
+
+        L.marker([41.163413, -71.579141],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Native American Cemetary.')
+        .openPopup();
+
+        L.marker([41.182698,-71.566481],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Fred Benson Town Beach.')
+        .openPopup();
+        
+    
+        L.marker([41.1789209,-71.5730034],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Ft. Island Monument.')
+        .openPopup();
+
+
+        L.marker([41.17374,-71.5620385],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Block Island Historical Society.')
+        .openPopup();
+        
+
+        L.marker([41.1795269,-71.5801844],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Island Cemetery.')
+        .openPopup();
+
+
+        L.marker([41.2027709,-71.5755086],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Manissean Village.')
+        .openPopup();
+
+        L.marker([41.1732637,-71.5571194],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Ferry Dock.')
+        .openPopup();
+
+
+        L.marker([41.224758,-71.5664696],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Settlers Rock.')
+        .openPopup();
+
+        L.marker([41.2106926,-71.5710971],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Sheffield Cemetery.')
+        .openPopup();
+
+        
+        L.marker([41.1530243,-71.5513795],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Wind Farm Overlook.')
+        .openPopup();
+        
+        L.marker([41.1518236,-71.5567439],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Mohegan Bluffs.')
+        .openPopup();
+        
+        
+        L.marker([41.1712323,-71.591162],{
+            icon: fontAwesomeIcon
+        }).addTo(map)
+        
+        .bindPopup('Gobern Family Land.')
+        .openPopup();
+        
+        
+        
+     
+fitbounds
+    </script>
+  </body>
+</html>
