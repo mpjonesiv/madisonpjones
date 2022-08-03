@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Augmenting the North Woods</title>
+
+   <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+
+<style>
+#map {
+    width: 1920px;
+    height:1080px;
+}
+
+</style> 
+
+<style type="text/css">
+    
+    .custom-popup, .leaflet-popup-content-wrapper {
+    background:#228b22;
+    color:#fff;
+    font-size:14px;
+    line-height:10px;
+    border-radius: 10px;
+    font-family: "Times New Roman", Times, serif;
+    }
+        
+</style>
+
+</head>
+
+<body>
+    <div id="map"></div>
+
+<script>
+
+    var map = L.map('map',{
+    center: [41.486229, -71.522457],
+    zoom: 15
+    });
+
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+   // create custom icon 
+var leafIcon = L.icon({
+        iconUrl: 'https://www.iconsdb.com/icons/preview/green/leaf-xxl.png',
+        iconSize: [30, 30], // size of the icon
+        });
+
+    // create marker object, pass custom icon as option, add to map         
+    var marker = L.marker([41.498611, -71.520556], {icon: leafIcon}).addTo(map).bindPopup("<h1> Henry Eldred Farm   </h1> <p> The Henry Eldred Farm is an historic farm complex at 368 Old North Road in South Kingstown, Rhode Island. The farmhouse's main block, a 2+12-story wood-frame building, was most likely constructed around 1822, however there is architectural evidence that suggests it might have been an expansion of an earlier building. Its straightforward Federal design has a decidedly rustic and vernacular feel. A collection of structures from the middle of the 19th century, including a barn, carriage house, shed, and blacksmith shop, are also part of the complex. </p> <img src='https://upload.wikimedia.org/wikipedia/commons/2/28/HENRY_ELDRED_FARM%2C_SOUTH_KINGSTON%2C_WASHINGTON_COUNTY_RI.jpg' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.495568, -71.517996], {icon: leafIcon}).addTo(map).bindPopup("<h1> North Woods Challenge Course  </h1> <p> At the eastern edge of the University-owned portion of the forest is the North Woods Challenge Course, which features an indoor climbing facility, an outdoor climbing tower, and other adventure elements used for leadership and team dynamics training.  Along the forest’s southeastern edge is a water tower, a substation, and the cleared land surrounding them. </p> <img src='https://aia-ri.org/wp-content/uploads/2014/04/52-climbing-wall-3-3.jpeg' height='250px' width='300px' />" );
+    
+    var marker = L.marker([41.499719, -71.532399], {icon: leafIcon}).addTo(map).bindPopup("<h1> Community Solar Array  </h1> <p> The community solar array maintained by the University of Rhode Island and town partners Sustainability has a prominent role now that University of Rhode Island and its community partners have created one of New England's largest solar energy projects. The project comprises a solar array on the northern edge of the North Woods. The solar array generates financial and environmental gains and provides a practical environment for learning about solar power. </p> <img src='https://images.ctfassets.net/gztkr1jaynk0/1XA1IMKj2X2jGSuCzuJwhf/88019ccf1b7208597a8105e8894f740b/what-is-community-solar.jpg?w=1440&fm=jpg' height='250px' width='300px' />" );
+
+   var marker = L.marker([41.4920668, -71.5184198], {icon: leafIcon}).addTo(map).bindPopup("<h1> Soil Pit </h1> <p> At the end of driftway 1 there is a soil pit within the bounds of the North Woods. This easily accessible feature of the University of Rhode Island’s outdoor laboratory allows students to observe, describe and interpret a soil profile. This example of expertientail learning will leave students with a better understanding of the relationships between observable and describable soil features and the factors of soil formation and soil forming processes. </p> <img src='https://www.uri.edu/wp-content/uploads/home/2021/11/Casey-Morgana-Tim-hero.jpg' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.4974, -71.5311], {icon: leafIcon}).addTo(map).bindPopup("<h1> Freshwater Pond </h1> <p> In the North Woods, there are several small freshwater ponds, both natural and manmade. Freshwater ponds contribute significantly to the delivery of ecosystem services to society, such as water filtration, flood control, irrigation, animal watering, fish production, pollinator assistance, and climate change mitigation. </p> <img src='https://apcc.org/wp-content/uploads/2020/06/Cape-Cod-Freshwater-Pond-980x654.jpg' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.49675, -71.5316], {icon: leafIcon}).addTo(map).bindPopup("<h1> Freshwater Pond </h1> <p> In the North Woods, there are several small freshwater ponds, both natural and manmade. Freshwater ponds contribute significantly to the delivery of ecosystem services to society, such as water filtration, flood control, irrigation, animal watering, fish production, pollinator assistance, and climate change mitigation. </p> <img src='https://apcc.org/wp-content/uploads/2020/06/Cape-Cod-Freshwater-Pond-980x654.jpg' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.49646, -71.53169], {icon: leafIcon}).addTo(map).bindPopup("<h1> Freshwater Pond </h1> <p> In the North Woods, there are several small freshwater ponds, both natural and manmade. Freshwater ponds contribute significantly to the delivery of ecosystem services to society, such as water filtration, flood control, irrigation, animal watering, fish production, pollinator assistance, and climate change mitigation. </p> <img src='https://apcc.org/wp-content/uploads/2020/06/Cape-Cod-Freshwater-Pond-980x654.jpg' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.49841, -71.52912], {icon: leafIcon}).addTo(map).bindPopup("<h1> Vernal Pool </h1> <p> Vernal pools are broadly defined as ephemeral wetlands that form in permanent basins during the cooler part of the year, but which dry during the summer months. They are a unique environment which provide a valuable breeding habitat for wildlife. In the North Woods, there are several small vernal pools that are frequent outdoor classroom sites in the spring when they are full of breeding frogs, toads and salamanders. Many species take advantage of these ephemeral wetlands to lay eggs in pools of water that disappear in summer and therefore cannot support populations of fish that would otherwise eat the eggs. </p> <img src='https://www.mlive.com/resizer/XBuaYrK8XGxWcLeyfBxjJAFRHyY=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/5HVSWVUCBJBGHAZF6XEFZ6C4WQ.jpg' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.49307, -71.53160], {icon: leafIcon}).addTo(map).bindPopup("<h1> Vernal Pool </h1> <p> Vernal pools are broadly defined as ephemeral wetlands that form in permanent basins during the cooler part of the year, but which dry during the summer months. They are a unique environment which provide a valuable breeding habitat for wildlife. In the North Woods, there are several small vernal pools that are frequent outdoor classroom sites in the spring when they are full of breeding frogs, toads and salamanders. Many species take advantage of these ephemeral wetlands to lay eggs in pools of water that disappear in summer and therefore cannot support populations of fish that would otherwise eat the eggs. </p> <img src='https://www.mlive.com/resizer/XBuaYrK8XGxWcLeyfBxjJAFRHyY=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/5HVSWVUCBJBGHAZF6XEFZ6C4WQ.jpg' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.49136, -71.52476], {icon: leafIcon}).addTo(map).bindPopup("<h1> Vernal Pool </h1> <p> Vernal pools are broadly defined as ephemeral wetlands that form in permanent basins during the cooler part of the year, but which dry during the summer months. They are a unique environment which provide a valuable breeding habitat for wildlife. In the North Woods, there are several small vernal pools that are frequent outdoor classroom sites in the spring when they are full of breeding frogs, toads and salamanders. Many species take advantage of these ephemeral wetlands to lay eggs in pools of water that disappear in summer and therefore cannot support populations of fish that would otherwise eat the eggs. </p> <img src='https://www.mlive.com/resizer/XBuaYrK8XGxWcLeyfBxjJAFRHyY=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/5HVSWVUCBJBGHAZF6XEFZ6C4WQ.jpg' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.4940493, -71.5268990], {icon: leafIcon}).addTo(map).bindPopup("<h1> Pine Tree Stand </h1> <p> The North Woods is primarily deciduous forest. However, along driftway 1 there is a small coniferous stand. This pine tree stand provides shelter and food for wildlife. Additionally, conifers play an important role globally by sequestering carbon. Coniferous forests take more carbon out of the air than temperate or tropical forests. </p> <img src='https://www.arcgis.com/sharing/rest/content/items/8a4ac2f813dc4b34ac08d8081eecb50d/info/thumbnail/ago_downloaded.jpg/?w=800' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.4952500, -71.5268990], {icon: leafIcon}).addTo(map).bindPopup("<h1> Stone Walls </h1> <p> Stone walls are the most important artifacts in rural New England. The North Woods contains stone walls and rock outcroppings, characteristic of the rural New England landscape, which contribute a sense of place and identity, unique to the University of Rhode ISland’s geographic location. </p> <img src='https://images.squarespace-cdn.com/content/v1/54bfbf13e4b08839cc010a41/1555946134796-TK0062819X81XRMBNK61/stone-wall2.jpg?format=1500w' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.498646, -71.532743], {icon: leafIcon}).addTo(map).bindPopup("<h1> West Kingston Town Dump / URI Disposal Area </h1> <p> The North Woods is home to a reclaimed superfund site, the 18-acre West Kingston Town Dump/University of Rhode Island (URI) Disposal Area complex. The West Kingston Town Dump and the URI Disposal Area are the two sites that make up the facility. </p> <img src='https://semspub.epa.gov/src/document/01/631414' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.491759, -71.532167], {icon: leafIcon}).addTo(map).bindPopup("<h1> Archaeological Survey </h1> <p> Towards the southwestern edge of the North Woods at the base of a hill is an aracheological survey site. This is a site of cultural importance as the area was used by the ancestral Narragansett for seasonal camps. </p> <img src='https://semspub.epa.gov/src/document/01/631414' height='250px' width='300px' />" );
+
+    var marker = L.marker([41.494952, -71.530631], {icon: leafIcon}).addTo(map).bindPopup("<h1> Remnant Agriculture Structures </h1> <p> The North Woods contains remnant agriculture structures as well as drainage ditches that invite further archeological investigation. </p> <img src='https://semspub.epa.gov/src/document/01/631414' height='250px' width='300px' />" );
+
+
+// create custom icon 
+var greenIcon = L.icon({
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/727/727155.png',
+        iconSize: [30, 30], // size of the icon
+        });
+
+    // create marker object, pass custom icon as option, add to map         
+
+    var marker = L.marker([41.490525, -71.525445], {icon: greenIcon}).addTo(map).bindPopup("<h1> North Woods Entrance </h1>");
+
+    var marker = L.marker([41.495204, -71.532346], {icon: greenIcon}).addTo(map).bindPopup("<h1> North Woods Entrance </h1>");
+
+    var marker = L.marker([41.4919000, -71.5184198], {icon: greenIcon}).addTo(map).bindPopup("<h1> North Woods Entrance </h1>"); 
+
+    var polygon = L.polygon([
+        [41.491792, -71.536071],
+        [41.490235, -71.524444],
+        [41.489953, -71.523595],
+        [41.489463, -71.521967],
+        [41.491066, -71.521586],
+        [41.490622, -71.518856],
+        [41.492946, -71.518166],
+        [41.493176, -71.519324],
+        [41.493664, -71.51918],
+        [41.49399, -71.521368],
+        [41.495177, -71.520955],
+        [41.494541, -71.517821],
+        [41.49771, -71.516331],
+        [41.500261, -71.532993],
+        [41.497283, -71.534605],
+        [41.496748, -71.531049],
+        [41.494706, -71.53158],
+        [41.495243, -71.535146]
+    ]).addTo(map).bindPopup("<h1>North Woods Boundary & Trail System</h1>");
+
+</script>
+
+<script>
+// Driftway 2 
+
+var polyline = L.polyline([
+    [41.499192, -71.533608],
+    [41.498943, -71.532042],
+    [41.498637, -71.530465],
+    [41.498184, -71.528647],
+    [41.498393, -71.528161],
+    [41.498703, -71.528007],
+    [41.498777, -71.527778], 
+    [41.498435, -71.524410],
+    [41.498397, -71.524025],
+    [41.498325, -71.523412], 
+    [41.497798, -71.522301],
+    [41.497540, -71.522191],
+    [41.497343, -71.521832], 
+    [41.497123, -71.521579],
+    [41.497088, -71.520926],
+    [41.495797, -71.518100], 
+    [41.495708, -71.517778], 
+    [41.495704, -71.517343],
+    [41.495651, -71.517084]
+]).addTo(map).bindPopup("<h1>North Woods Trail System</h1>");
+
+// Driftway 1 
+
+var polyline = L.polyline([
+    [41.495538, -71.535107],
+    [41.495468, -71.534732], 
+    [41.495284, -71.533592], 
+    [41.495224, -71.533262], 
+    [41.495134, -71.532850], 
+    [41.495216, -71.532439], 
+    [41.4952, -71.531961], 
+    [41.494976, -71.531113], 
+    [41.494854, -71.529710], 
+    [41.494788, -71.529399], 
+    [41.494678, -71.529127],
+    [41.494629, -71.528824], 
+    [41.494629, -71.528494], 
+    [41.494505, -71.528045],
+    [41.494355, -71.527662], 
+    [41.493596, -71.526623], 
+    [41.493351, -71.526382], 
+    [41.493111, -71.525487], 
+    [41.493000, -71.524083],
+    [41.492563, -71.523135], 
+    [41.492346, -71.522241], 
+    [41.492517, -71.521129], 
+    [41.492437, -71.520150], 
+    [41.492194, -71.519235], 
+    [41.491950, -71.518389]    
+]).addTo(map).bindPopup("<h1>North Woods Trail System</h1>");
+
+ var polyline = L.polyline([
+    [41.4902378898, -71.526337629261],
+    [41.4902495407, -71.526380712265],
+    [41.4901725948, -71.526372497966],
+    [41.4902335312, -71.526365457167],
+    [41.4902328607, -71.526371911268],
+    [41.4901963994, -71.526298988667],
+    [41.4901805576, -71.526199160168],
+    [41.4903061185, -71.526056667865],
+    [41.4903383050, -71.526045436065],
+    [41.4904282428, -71.526030013364],
+    [41.4905251376, -71.525994557965], 
+    [41.4905103017, -71.525907386165],
+    [41.4905160014, -71.525841755865],
+    [41.4904799592, -71.525753075365],
+    [41.4904583339, -71.525646289866],
+    [41.4904267341, -71.525398269370], 
+    [41.4904151671, -71.525294585270],
+    [41.4904522989, -71.525239432269],
+    [41.4904792048, -71.525222919969],
+    [41.4905045182, -71.525179669368],
+    [41.4905082900, -71.525133568867],
+    [41.4905000757, -71.525172796169],
+    [41.4905411471, -71.525181932471],
+    [41.4906524587, -71.525163156970],
+    [41.4907827973, -71.525070536968],
+    [41.4909402933, -71.525040110669],
+    [41.4910524432, -71.525084953871],
+    [41.4911989588, -71.525053018771],
+    [41.4912279602, -71.525086546372],
+    [41.4913064986, -71.525132311573],
+    [41.4914841112, -71.525270193877],
+    [41.4915766474, -71.525355605478],
+    [41.4916733745, -71.525467336277],
+    [41.4916872885, -71.525533720975],
+    [41.4917673357, -71.525737484970],
+    [41.4918519091, -71.525865141367], 
+    [41.4918926451, -71.526026241565], 
+    [41.4919725247, -71.526135876865],
+    [41.4919962455, -71.526139648665],
+    [41.4921053778, -71.526165716467],
+    [41.4921544958, -71.526249200166],
+    [41.4922301006, -71.526297396065],
+    [41.4923104830, -71.526202932066],
+    [41.4924179390, -71.526091285066],
+    [41.4925229643, -71.525968154967],
+    [41.4926344436, -71.525892717867],
+    [41.4927144907, -71.525845611567],
+    [41.4928262215, -71.525735976268],
+    [41.4929216914, -71.525637405069],
+    [41.4930618368, -71.525553418368],
+    [41.4931323286, -71.525628939367],
+    [41.4931802731, -71.525842426365],
+    [41.4932392817, -71.526053147462],
+    [41.4932925906, -71.526188096065],
+    [41.4933203347, -71.526274429665],
+    [41.4934006333, -71.526394793866],
+    [41.4934860449, -71.526442989768],
+    [41.4934992883, -71.526453550970],
+    [41.4935558662, -71.526558073274],
+    [41.4936279505, -71.526624457978],
+    [41.4936930779, -71.526677683081],
+    [41.4938236680, -71.526801399987],
+    [41.4939953294, -71.526988064986],
+    [41.4941231534, -71.527041122375],
+    [41.4941565134, -71.527010947572],
+    [41.4941715170, -71.526976497869],
+    [41.4941660687, -71.526964008867],
+    [41.4942124207, -71.526981024166],
+    [41.4942264184, -71.526971217264],
+    [41.4942000993, -71.526998709965],
+    [41.4941856824, -71.526973564266],
+    [41.4941926394, -71.526967193967],
+    [41.4942899533, -71.526857391060],
+    [41.4942384046, -71.526807015860],
+    [41.4942037035, -71.526808524556],
+    [41.4942098223, -71.526738954755],
+    [41.4942366444, -71.526719676355],
+    [41.4943026938, -71.526806680552],
+    [41.4942446910, -71.526841046351],
+    [41.4943581820, -71.526870718252],
+    [41.4943795558, -71.526890918650],
+    [41.4944328647, -71.526914890950],
+    [41.4945823979, -71.526950262550],
+    [41.4946766943, -71.526944395251],
+    [41.4947440010, -71.526875747452],
+    [41.4948401414, -71.526830652752],
+    [41.4949453343, -71.526733674155],
+    [41.4949740842, -71.526705678659],
+    [41.4949863218, -71.526702325862],
+    [41.4950134791, -71.526715317763],
+    [41.4950860664, -71.526759909563],
+    [41.4952038322, -71.526825288365],
+    [41.4952594880, -71.526850769365],
+    [41.4954570495, -71.526861246762],
+    [41.4955857955, -71.526801148460],
+    [41.4957168885, -71.526718922059],
+    [41.4957765676, -71.526742810458],
+    [41.4958583750, -71.526749432158],
+    [41.4960638992, -71.526973145163],
+    [41.4960944932, -71.526983622563],
+    [41.49611104,  -71.526980940361],
+    [41.4961386658, -71.526980521260],
+    [41.4961605426, -71.527032656660],
+    [41.496177390, -71.527128964761],
+    [41.4962158632, -71.527271457064],
+    [41.4962594490, -71.527442615566],
+    [41.4963424299, -71.527553424266],
+    [41.4964206330, -71.527662472865],
+    [41.4964405820, -71.527702538364],
+    [41.4964526519, -71.527669429862],
+    [41.4964776300, -71.527803456464],
+    [41.4965359680, -71.527928179167],
+    [41.4967019297, -71.528040161467],
+    [41.4967712481, -71.528067486464],
+    [41.4969095495, -71.527893645759],
+    [41.4969053585, -71.527872439555],
+    [41.4968864154, -71.527872690953],
+    [41.4968944620, -71.527876630452],
+    [41.4969656244, -71.527899093952],
+    [41.4970805403, -71.527933124550],
+    [41.4971953724, -71.527936812548],
+    [41.4973128028, -71.527924910246],
+    [41.4974343404, -71.527950642645],
+    [41.4975184947, -71.528008477846],
+    [41.4976467378, -71.528096152547],
+    [41.4976598136, -71.528107216648],
+    [41.4977170620, -71.528128590448],
+    [41.4977615699, -71.528157927148],
+    [41.4977645036, -71.528138816449],
+    [41.4977918286, -71.528179300949],
+    [41.4977967739, -71.528185419749],
+    [41.4979229216, -71.528333360350],
+    [41.4980616421, -71.528451796649],
+    [41.4981793240, -71.528586242349],
+    [41.4982405957, -71.528748935150],
+    [41.4982553478, -71.528990166348],
+    [41.4983270131, -71.529111284849],
+    [41.4983407594, -71.529068872346],
+    [41.4983286057, -71.529085049441],
+    [41.4983339701, -71.529086139142],
+    [41.4983667433, -71.529111955345],
+    [41.4983239956, -71.529118996146],
+    [41.4982768893, -71.529287220950],
+    [41.4983420167, -71.529560806253],
+    [41.4984169509, -71.529817041047],
+    [41.4984482992, -71.529913097646],
+    [41.4985036198, -71.530129769842],
+    [41.4985642210, -71.530317021540],
+    [41.4986115787, -71.530449539440],
+    [41.4986062981, -71.530479798140],
+    [41.4985111635, -71.530585829238],
+    [41.4984345529, -71.530586835038],
+    [41.4982913062, -71.530519779836],
+    [41.4981400128, -71.530463285734],
+    [41.4980149549, -71.530443923533],
+    [41.4978988655, -71.530488096232],
+    [41.4977978636, -71.530637797031],
+    [41.4977330714, -71.530706277132],
+    [41.4977163915, -71.530724046831],
+    [41.4976808522, -71.530744917731],
+    [41.4975770004, -71.530837873032],
+    [41.4974272158, -71.530950525831],
+    [41.4973283093, -71.531037529932],
+    [41.4973080251, -71.531051192432],
+    [41.4972630143, -71.530916998231],
+    [41.4972744137, -71.530945915733],
+    [41.4972712286, -71.530917333432],
+    [41.4972569793, -71.530862767229],
+    [41.4972667862, -71.530882800030],
+    [41.4972472563, -71.530834268829],
+    [41.4972385392, -71.530880117828],
+    [41.4972387906, -71.530865533331],
+    [41.4972325042, -71.530883973531],
+    [41.4973029122, -71.531039038732],
+    [41.4972783532, -71.531124450331],
+    [41.4972459991, -71.531173149130],
+    [41.4972149022, -71.531201982929],
+    [41.4970758464, -71.531228385924],
+    [41.4969384670, -71.531269373419],
+    [41.4969289955, -71.531265014818],
+    [41.4968920313, -71.531262667817],
+    [41.4967677277, -71.531184129417],
+    [41.4967537299, -71.531178848817],
+    [41.4967028517, -71.531147249019],
+    [41.4965845831, -71.531185219123],
+    [41.4964601118, -71.531281946226],
+    [41.4963731077, -71.531348833824],
+    [41.4963255823, -71.531300721721],
+    [41.4963307790, -71.531286137221],
+    [41.4962980896, -71.531264092820],
+    [41.4962970000, -71.531205335619],
+    [41.4962415956, -71.531192595121],
+    [41.4962335490, -71.531191505521],
+    [41.4961430244, -71.531266607324],
+    [41.4961498976, -71.531319413328],
+    [41.4961943217, -71.531371381132],
+    [41.4961975068, -71.531319329528],
+    [41.4961920585, -71.531276665628],
+    [41.4960262645, -71.531337685926],
+    [41.4960005321, -71.531416978725],
+    [41.4960121829, -71.531470203829],
+    [41.4960550983, -71.531466096629],
+    [41.4961478859, -71.531378673427],
+    [41.4962404221, -71.531390240435],
+    [41.4962541685, -71.531375236835],
+    [41.4963210560, -71.531317317933],
+    [41.4963867702, -71.531367357833],
+    [41.4963903744, -71.531399460533],
+    [41.4963492192, -71.531526111132],
+    [41.4962781407, -71.531595261826],
+    [41.4962618798, -71.531565673622],
+    [41.4962161146, -71.531597776322],
+    [41.4960940741, -71.531677572122],
+    [41.4960001130, -71.531694503522],
+    [41.4958965126, -71.531682517421],
+    [41.4958552737, -71.531660640623],
+    [41.4957713708, -71.531633399424],
+    [41.4956715424, -71.531754601724],
+    [41.4956137072, -71.531915785724],
+    [41.4956121985, -71.532010166023],
+    [41.4955489989, -71.532180151024],
+    [41.4955347497, -71.532202782125],
+    [41.4954490028, -71.532319961122],
+    [41.4953514375, -71.532416939719],
+    [41.4952860586, -71.532476199818],
+    [41.4951638505, -71.532546775418],
+    [41.4951343462, -71.532532610016],
+    [41.4950008225, -71.532559180617],
+    [41.4948620182, -71.532493382720],
+    [41.4948495291, -71.532489191720],
+    [41.4947751816, -71.532480055525],
+    [41.4947680570, -71.532499669126],
+    [41.4947289135, -71.532480474626],
+    [41.4946888480, -71.532491790128],
+    [41.4946935419, -71.532476786528],
+    [41.4946321864, -71.532392464625],
+    [41.4945548214, -71.532287607024],
+    [41.4945222996, -71.532236477425],
+    [41.4944759477, -71.532194567827],
+    [41.4944683202, -71.532194232627],
+    [41.4943565056, -71.532173780728],
+    [41.4942342974, -71.532239997827],
+    [41.4941260871, -71.532184844826],
+    [41.4940952417, -71.532185934526],
+    [41.4940563496, -71.532198842627],
+    [41.4940470457, -71.532198004427],
+    [41.4938905556, -71.532223569227],
+    [41.4938285295, -71.532254079429],
+    [41.4938111790, -71.532244691629],
+    [41.4937144518, -71.532251145727],
+    [41.4935712051, -71.532289199526],
+    [41.4935085084, -71.532294983027],
+    [41.4935118612, -71.532293893426],
+    [41.4933918323, -71.532331947227],
+    [41.4932621643, -71.532407049129],
+    [41.4931808598, -71.532402019929],
+    [41.4932075143, -71.532324571232],
+    [41.4932448976, -71.532190209331],
+    [41.4932887349, -71.532075544829],
+    [41.4932639245, -71.531975213426],
+    [41.4932515193, -71.531928107125],
+    [41.4932703786, -71.531849065827],
+    [41.4932386111, -71.531763402732],
+    [41.4931559656, -71.531761391134],
+    [41.4930700511, -71.531716631734],
+    [41.4931086078, -71.531743286236],
+    [41.4931099489, -71.531575899637],
+    [41.4931051712, -71.531464671737],
+    [41.4930723142, -71.531261662037],
+    [41.4930889942, -71.531166695140],
+    [41.4931041654, -71.531169964043],
+    [41.4931221865, -71.531135765842],
+    [41.4930923469, -71.530808871640],
+    [41.4930593222, -71.530640060138],
+    [41.4930463303, -71.530466973839],
+    [41.4930391219, -71.530291289141],
+    [41.4930319972, -71.530240410944],
+    [41.4929929376, -71.530201602746],
+    [41.4929886628, -71.530202440946],
+    [41.4930990525, -71.530235298046],
+    [41.4932039101, -71.530223563345],
+    [41.4932742342, -71.530235214246],
+    [41.4933578856, -71.530227083744],
+    [41.4934078418, -71.530170925042],
+    [41.4934873860, -71.530036898342],
+    [41.4936272800, -71.529972190043],
+    [41.4937800821, -71.529925838143],
+    [41.4939059783, -71.529905218643],
+    [41.4940011967, -71.529840510343],
+    [41.4941452816, -71.529798181743],
+    [41.4942999277, -71.529812431046],
+    [41.4943580143, -71.529799019945],
+    [41.4945212100, -71.529789799847],
+    [41.4946474414, -71.529805306347],
+    [41.4947075397, -71.529799355246],
+    [41.4947974775, -71.529807737145],
+    [41.4948455058, -71.529721068245],
+    [41.4948530495, -71.529707992443],
+    [41.4948417339, -71.529725007746],
+    [41.4948683884, -71.529701622247],
+    [41.4949061070, -71.529614618050],
+    [41.4948738366, -71.529578073055],
+    [41.4948639460, -71.529537756059],
+    [41.4947863296, -71.529744118559],
+    [41.4947375469, -71.529736490958],
+    [41.4946407359, -71.529740179053],
+    [41.4945876785, -71.529719978649],
+    [41.4944921248, -71.529733641147],
+    [41.4943679888, -71.529748896147],
+    [41.4942395780, -71.529777394646],
+    [41.4940684196, -71.529788794047],
+    [41.4939626399, -71.529835984147],
+    [41.4938370790, -71.529901530645],
+    [41.4937732089, -71.529918713544],
+    [41.4936386794, -71.529942601946],
+    [41.4935071673, -71.529977386848],
+    [41.4934499189, -71.530055254746],
+    [41.4934327360, -71.530100265546],
+    [41.4933148865, -71.530201770449],
+    [41.4932920877, -71.530201938049],
+    [41.4931315742, -71.530233202548],
+    [41.4929522015, -71.530289780349],
+    [41.4929370303, -71.530286846750],
+    [41.4928151574, -71.530244182848],
+    [41.4927181788, -71.530163297446],
+    [41.4926354494, -71.530120130641],
+    [41.4925273228, -71.530012171742],
+    [41.4924664702, -71.529869930841],
+    [41.4924290031, -71.529744034641],
+    [41.4924088027, -71.529696257840],
+    [41.4924262371, -71.529586454937],
+    [41.4924325235, -71.529563320838],
+    [41.4924483653, -71.529481764940],
+    [41.4924896881, -71.529311109341],
+    [41.4925623592, -71.529243635041],
+    [41.4926051069, -71.529109524643],
+    [41.4926293306, -71.529021766043],
+    [41.4926447533, -71.528945490743],
+    [41.4926491957, -71.528789838843],
+    [41.4926715754, -71.528718173544],
+    [41.4926592540, -71.528628571046],
+    [41.4925888460, -71.528597977047],
+    [41.4925471041, -71.528596971247],
+    [41.4924704935, -71.528626726942],
+    [41.4924734272, -71.528622871342], 
+    [41.4924917836, -71.528614070342], 
+    [41.4925320167, -71.528618512742], 
+    [41.4926749282, -71.528463112245], 
+    [41.4927263930, -71.528409048946], 
+    [41.4928260539, -71.528301844446],
+    [41.4929352701, -71.528168991247],
+    [41.4929887466, -71.528083412048],
+    [41.4930140600, -71.527944356250],
+    [41.4930138923, -71.527834385651],
+    [41.4929481782, -71.527621317752],
+    [41.4929486811, -71.527590472352],
+    [41.4929619245, -71.527525512552],
+    [41.4929454122, -71.527401460350],
+    [41.4929351024, -71.527330633349],
+    [41.4929438196, -71.527300290849],
+    [41.4929378685, -71.527175065148],
+    [41.4928637724, -71.526972642248],
+    [41.4927858207, -71.526884129348],
+    [41.4927667938, -71.526695536449],
+    [41.4927330986, -71.526540974250],
+    [41.4926990680, -71.526446007253], 
+    [41.4927039295, -71.526318518453], 
+    [41.4927147422, -71.526224976453], 
+    [41.4927176759, -71.526022888755], 
+    [41.4927306678, -71.525965556556], 
+    [41.4927163348, -71.525869835258], 
+    [41.4927035943, -71.525871763059], 
+    [41.4926336892, -71.525927921860], 
+    [41.4925862476, -71.525957929059], 
+    [41.4924453478, -71.526051471062], 
+    [41.4923497103, -71.526145516065], 
+    [41.4922176953, -71.526252972072], 
+    [41.4921954833, -71.526209637571], 
+    [41.4921865147, -71.526212068367], 
+    [41.4921599440, -71.526170074966], 
+    [41.4921262488, -71.526252636763], 
+    [41.4921277575, -71.526288176065], 
+    [41.4921787195, -71.526204440767], 
+    [41.4922031108, -71.526241572666], 
+    [41.4921931364, -71.526269651966]
+ ]).addTo(map).bindPopup("<h1>North Woods Trail System</h1>");
+
+</script>
+
+</body>
+
+</html>
+
+</script>
+
+</body>
+
+</html>
