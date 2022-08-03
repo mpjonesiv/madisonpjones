@@ -30,7 +30,7 @@
 <style type="text/css">
     
     .custom-popup, .leaflet-popup-content-wrapper {
-    background:#228b22;
+    background:#3399FF;
     color:#fff;
     font-size:14px;
     line-height:10px;
@@ -57,43 +57,66 @@
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-   // create custom icon 
-var leafIcon = L.icon({
-        iconUrl: 'https://www.iconsdb.com/icons/preview/green/leaf-xxl.png',
-        iconSize: [30, 30], // size of the icon
-        });
-
-    // create marker object, pass custom icon as option, add to map         
-    var marker = L.marker([41.498611, -71.520556], {icon: leafIcon}).addTo(map).bindPopup("<h1> Henry Eldred Farm   </h1> <p> The Henry Eldred Farm is an historic farm complex at 368 Old North Road in South Kingstown, Rhode Island. The farmhouse's main block, a 2+12-story wood-frame building, was most likely constructed around 1822, however there is architectural evidence that suggests it might have been an expansion of an earlier building. Its straightforward Federal design has a decidedly rustic and vernacular feel. A collection of structures from the middle of the 19th century, including a barn, carriage house, shed, and blacksmith shop, are also part of the complex. </p> <img src='https://upload.wikimedia.org/wikipedia/commons/2/28/HENRY_ELDRED_FARM%2C_SOUTH_KINGSTON%2C_WASHINGTON_COUNTY_RI.jpg' height='250px' width='300px' />" );
-
-    var marker = L.marker([41.495568, -71.517996], {icon: leafIcon}).addTo(map).bindPopup("<h1> North Woods Challenge Course  </h1> <p> At the eastern edge of the University-owned portion of the forest is the North Woods Challenge Course, which features an indoor climbing facility, an outdoor climbing tower, and other adventure elements used for leadership and team dynamics training.  Along the forest’s southeastern edge is a water tower, a substation, and the cleared land surrounding them. </p> <img src='https://aia-ri.org/wp-content/uploads/2014/04/52-climbing-wall-3-3.jpeg' height='250px' width='300px' />" );
+    var marker = L.marker([41.49136, -71.52476], {   
+        title: "Vernal Pool",
+    }).addTo(map).bindPopup("<h1> Vernal Pool </h1> <p> Vernal pools are broadly defined as ephemeral wetlands that form in permanent basins during the cooler part of the year, but which dry during the summer months. They are a unique environment which provide a valuable breeding habitat for wildlife. In the North Woods, there are several small vernal pools that are frequent outdoor classroom sites in the spring when they are full of breeding frogs, toads and salamanders. Many species take advantage of these ephemeral wetlands to lay eggs in pools of water that disappear in summer and therefore cannot support populations of fish that would otherwise eat the eggs. </p> <img src='https://thejamesriver.org/wp-content/uploads/2019/04/VernalPools.png' height='300px' width='300px' />" );
     
-    var marker = L.marker([41.499719, -71.532399], {icon: leafIcon}).addTo(map).bindPopup("<h1> Community Solar Array  </h1> <p> The community solar array maintained by the University of Rhode Island and town partners Sustainability has a prominent role now that University of Rhode Island and its community partners have created one of New England's largest solar energy projects. The project comprises a solar array on the northern edge of the North Woods. The solar array generates financial and environmental gains and provides a practical environment for learning about solar power. </p> <img src='https://images.ctfassets.net/gztkr1jaynk0/1XA1IMKj2X2jGSuCzuJwhf/88019ccf1b7208597a8105e8894f740b/what-is-community-solar.jpg?w=1440&fm=jpg' height='250px' width='300px' />" );
+    var marker = L.marker([41.49307, -71.53160], {  
+        title: "Vernal Pool",
+    }).addTo(map).bindPopup("<h1> Vernal Pool </h1> <p> Vernal pools are broadly defined as ephemeral wetlands that form in permanent basins during the cooler part of the year, but which dry during the summer months. They are a unique environment which provide a valuable breeding habitat for wildlife. In the North Woods, there are several small vernal pools that are frequent outdoor classroom sites in the spring when they are full of breeding frogs, toads and salamanders. Many species take advantage of these ephemeral wetlands to lay eggs in pools of water that disappear in summer and therefore cannot support populations of fish that would otherwise eat the eggs. </p> <img src='https://thejamesriver.org/wp-content/uploads/2019/04/VernalPools.png' height='300px' width='300px' />" );
+    
 
-   var marker = L.marker([41.4920668, -71.5184198], {icon: leafIcon}).addTo(map).bindPopup("<h1> Soil Pit </h1> <p> At the end of driftway 1 there is a soil pit within the bounds of the North Woods. This easily accessible feature of the University of Rhode Island’s outdoor laboratory allows students to observe, describe and interpret a soil profile. This example of expertientail learning will leave students with a better understanding of the relationships between observable and describable soil features and the factors of soil formation and soil forming processes. </p> <img src='https://www.uri.edu/wp-content/uploads/home/2021/11/Casey-Morgana-Tim-hero.jpg' height='250px' width='300px' />" );
+    var marker = L.marker([41.49841, -71.52912], {  
+        title: "Vernal Pool",
+    }).addTo(map).bindPopup("<h1> Vernal Pool </h1> <p> Vernal pools are broadly defined as ephemeral wetlands that form in permanent basins during the cooler part of the year, but which dry during the summer months. They are a unique environment which provide a valuable breeding habitat for wildlife. In the North Woods, there are several small vernal pools that are frequent outdoor classroom sites in the spring when they are full of breeding frogs, toads and salamanders. Many species take advantage of these ephemeral wetlands to lay eggs in pools of water that disappear in summer and therefore cannot support populations of fish that would otherwise eat the eggs. </p> <img src='https://thejamesriver.org/wp-content/uploads/2019/04/VernalPools.png' height='300px' width='300px' />" );
 
-    var marker = L.marker([41.4974, -71.5311], {icon: leafIcon}).addTo(map).bindPopup("<h1> Freshwater Pond </h1> <p> In the North Woods, there are several small freshwater ponds, both natural and manmade. Freshwater ponds contribute significantly to the delivery of ecosystem services to society, such as water filtration, flood control, irrigation, animal watering, fish production, pollinator assistance, and climate change mitigation. </p> <img src='https://apcc.org/wp-content/uploads/2020/06/Cape-Cod-Freshwater-Pond-980x654.jpg' height='250px' width='300px' />" );
+  var marker = L.marker([41.49646, -71.53169], {  
+        title: "Freshwater Pond",
+    }).addTo(map).bindPopup("<h1> Freshwater Pond </h1> <p> In the North Woods, there are several small freshwater ponds, both natural and manmade. Freshwater ponds contribute significantly to the delivery of ecosystem services to society, such as water filtration, flood control, irrigation, animal watering, fish production, pollinator assistance, and climate change mitigation. </p> <img src='https://apcc.org/wp-content/uploads/2020/06/Cape-Cod-Freshwater-Pond-980x654.jpg' height='300px' width='300px' />" );
 
-    var marker = L.marker([41.49675, -71.5316], {icon: leafIcon}).addTo(map).bindPopup("<h1> Freshwater Pond </h1> <p> In the North Woods, there are several small freshwater ponds, both natural and manmade. Freshwater ponds contribute significantly to the delivery of ecosystem services to society, such as water filtration, flood control, irrigation, animal watering, fish production, pollinator assistance, and climate change mitigation. </p> <img src='https://apcc.org/wp-content/uploads/2020/06/Cape-Cod-Freshwater-Pond-980x654.jpg' height='250px' width='300px' />" );
+    var marker = L.marker([41.49675, -71.5316], {  
+        title: "Freshwater Pond",
+    }).addTo(map).bindPopup("<h1> Freshwater Pond </h1> <p> In the North Woods, there are several small freshwater ponds, both natural and manmade. Freshwater ponds contribute significantly to the delivery of ecosystem services to society, such as water filtration, flood control, irrigation, animal watering, fish production, pollinator assistance, and climate change mitigation. </p> <img src='https://apcc.org/wp-content/uploads/2020/06/Cape-Cod-Freshwater-Pond-980x654.jpg' height='300px' width='300px' />" );
 
-    var marker = L.marker([41.49646, -71.53169], {icon: leafIcon}).addTo(map).bindPopup("<h1> Freshwater Pond </h1> <p> In the North Woods, there are several small freshwater ponds, both natural and manmade. Freshwater ponds contribute significantly to the delivery of ecosystem services to society, such as water filtration, flood control, irrigation, animal watering, fish production, pollinator assistance, and climate change mitigation. </p> <img src='https://apcc.org/wp-content/uploads/2020/06/Cape-Cod-Freshwater-Pond-980x654.jpg' height='250px' width='300px' />" );
+    var marker = L.marker([41.4974, -71.5311], {  
+        title: "Freshwater Pond",
+    }).addTo(map).bindPopup("<h1> Freshwater Pond </h1> <p> In the North Woods, there are several small freshwater ponds, both natural and manmade. Freshwater ponds contribute significantly to the delivery of ecosystem services to society, such as water filtration, flood control, irrigation, animal watering, fish production, pollinator assistance, and climate change mitigation. </p> <img src='https://apcc.org/wp-content/uploads/2020/06/Cape-Cod-Freshwater-Pond-980x654.jpg' height='300px' width='300px' />" );
 
-    var marker = L.marker([41.49841, -71.52912], {icon: leafIcon}).addTo(map).bindPopup("<h1> Vernal Pool </h1> <p> Vernal pools are broadly defined as ephemeral wetlands that form in permanent basins during the cooler part of the year, but which dry during the summer months. They are a unique environment which provide a valuable breeding habitat for wildlife. In the North Woods, there are several small vernal pools that are frequent outdoor classroom sites in the spring when they are full of breeding frogs, toads and salamanders. Many species take advantage of these ephemeral wetlands to lay eggs in pools of water that disappear in summer and therefore cannot support populations of fish that would otherwise eat the eggs. </p> <img src='https://www.mlive.com/resizer/XBuaYrK8XGxWcLeyfBxjJAFRHyY=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/5HVSWVUCBJBGHAZF6XEFZ6C4WQ.jpg' height='250px' width='300px' />" );
+  var marker = L.marker([41.4920668, -71.5184198], {  
+        title: "Soil Pit",
+    }).addTo(map).bindPopup("<h1> Soil Pit </h1> <p> At the end of driftway 1 there is a soil pit within the bounds of the North Woods. This easily accessible feature of the University of Rhode Island’s outdoor laboratory allows students to observe, describe and interpret a soil profile. This example of expertientail learning will leave students with a better understanding of the relationships between observable and describable soil features and the factors of soil formation and soil forming processes. </p> <img src='https://www.uri.edu/wp-content/uploads/home/2021/11/Casey-Morgana-Tim-hero.jpg' height='300px' width='300px' />" );
 
-    var marker = L.marker([41.49307, -71.53160], {icon: leafIcon}).addTo(map).bindPopup("<h1> Vernal Pool </h1> <p> Vernal pools are broadly defined as ephemeral wetlands that form in permanent basins during the cooler part of the year, but which dry during the summer months. They are a unique environment which provide a valuable breeding habitat for wildlife. In the North Woods, there are several small vernal pools that are frequent outdoor classroom sites in the spring when they are full of breeding frogs, toads and salamanders. Many species take advantage of these ephemeral wetlands to lay eggs in pools of water that disappear in summer and therefore cannot support populations of fish that would otherwise eat the eggs. </p> <img src='https://www.mlive.com/resizer/XBuaYrK8XGxWcLeyfBxjJAFRHyY=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/5HVSWVUCBJBGHAZF6XEFZ6C4WQ.jpg' height='250px' width='300px' />" );
+  var marker = L.marker([41.4986217, -71.5330295], {  
+        title: "Community Solar Array ",
+    }).addTo(map).bindPopup("<h1> Community Solar Array  </h1> <p> The community solar array maintained by the University of Rhode Island and town partners Sustainability has a prominent role now that University of Rhode Island and its community partners have created one of New England's largest solar energy projects. The project comprises a solar array on the northern edge of the North Woods. The solar array generates financial and environmental gains and provides a practical environment for learning about solar power. </p> <img src='https://images.ctfassets.net/gztkr1jaynk0/1XA1IMKj2X2jGSuCzuJwhf/88019ccf1b7208597a8105e8894f740b/what-is-community-solar.jpg?w=1440&fm=jpg' height='300px' width='300px' />" );
 
-    var marker = L.marker([41.49136, -71.52476], {icon: leafIcon}).addTo(map).bindPopup("<h1> Vernal Pool </h1> <p> Vernal pools are broadly defined as ephemeral wetlands that form in permanent basins during the cooler part of the year, but which dry during the summer months. They are a unique environment which provide a valuable breeding habitat for wildlife. In the North Woods, there are several small vernal pools that are frequent outdoor classroom sites in the spring when they are full of breeding frogs, toads and salamanders. Many species take advantage of these ephemeral wetlands to lay eggs in pools of water that disappear in summer and therefore cannot support populations of fish that would otherwise eat the eggs. </p> <img src='https://www.mlive.com/resizer/XBuaYrK8XGxWcLeyfBxjJAFRHyY=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/5HVSWVUCBJBGHAZF6XEFZ6C4WQ.jpg' height='250px' width='300px' />" );
+    var marker = L.marker([41.495568, -71.517996], {  
+        title: "North Woods Challenge Course  ",
+    }).addTo(map).bindPopup("<h1> North Woods Challenge Course  </h1> <p> At the eastern edge of the University-owned portion of the forest is the North Woods Challenge Course, which features an indoor climbing facility, an outdoor climbing tower, and other adventure elements used for leadership and team dynamics training.  Along the forest’s southeastern edge is a water tower, a substation, and the cleared land surrounding them. </p> <img src='https://www.uri.edu/news/wp-content/uploads/news/sites/16/2021/05/RockClimbing01550-1.jpg' height='300px' width='300px' />" );
 
-    var marker = L.marker([41.4940493, -71.5268990], {icon: leafIcon}).addTo(map).bindPopup("<h1> Pine Tree Stand </h1> <p> The North Woods is primarily deciduous forest. However, along driftway 1 there is a small coniferous stand. This pine tree stand provides shelter and food for wildlife. Additionally, conifers play an important role globally by sequestering carbon. Coniferous forests take more carbon out of the air than temperate or tropical forests. </p> <img src='https://www.arcgis.com/sharing/rest/content/items/8a4ac2f813dc4b34ac08d8081eecb50d/info/thumbnail/ago_downloaded.jpg/?w=800' height='250px' width='300px' />" );
+    var marker = L.marker([41.498611, -71.520556], {  
+        title: "Henry Eldred Farm   ",
+    }).addTo(map).bindPopup("<h1> Henry Eldred Farm   </h1> <p> The Henry Eldred Farm is an historic farm complex at 368 Old North Road in South Kingstown, Rhode Island. The farmhouse's main block, a 2+12-story wood-frame building, was most likely constructed around 1822, however there is architectural evidence that suggests it might have been an expansion of an earlier building. Its straightforward Federal design has a decidedly rustic and vernacular feel. A collection of structures from the middle of the 19th century, including a barn, carriage house, shed, and blacksmith shop, are also part of the complex. </p> <img src='https://upload.wikimedia.org/wikipedia/commons/2/28/HENRY_ELDRED_FARM%2C_SOUTH_KINGSTON%2C_WASHINGTON_COUNTY_RI.jpg' height='300px' width='300px' />" );
 
-    var marker = L.marker([41.4952500, -71.5268990], {icon: leafIcon}).addTo(map).bindPopup("<h1> Stone Walls </h1> <p> Stone walls are the most important artifacts in rural New England. The North Woods contains stone walls and rock outcroppings, characteristic of the rural New England landscape, which contribute a sense of place and identity, unique to the University of Rhode ISland’s geographic location. </p> <img src='https://images.squarespace-cdn.com/content/v1/54bfbf13e4b08839cc010a41/1555946134796-TK0062819X81XRMBNK61/stone-wall2.jpg?format=1500w' height='250px' width='300px' />" );
+    var marker = L.marker([41.498611, -71.520556], {  
+        title: "Pine Tree Stand",
+    }).addTo(map).bindPopup("<h1> Pine Tree Stand </h1> <p> The North Woods is primarily deciduous forest. However, along driftway 1 there is a small coniferous stand. This pine tree stand provides shelter and food for wildlife. Additionally, conifers play an important role globally by sequestering carbon. Coniferous forests take more carbon out of the air than temperate or tropical forests. </p> <img src='https://upload.wikimedia.org/wikipedia/commons/2/28/HENRY_ELDRED_FARM%2C_SOUTH_KINGSTON%2C_WASHINGTON_COUNTY_RI.jpg' height='300px' width='300px' />" );
 
-    var marker = L.marker([41.498646, -71.532743], {icon: leafIcon}).addTo(map).bindPopup("<h1> West Kingston Town Dump / URI Disposal Area </h1> <p> The North Woods is home to a reclaimed superfund site, the 18-acre West Kingston Town Dump/University of Rhode Island (URI) Disposal Area complex. The West Kingston Town Dump and the URI Disposal Area are the two sites that make up the facility. </p> <img src='https://semspub.epa.gov/src/document/01/631414' height='250px' width='300px' />" );
+    var marker = L.marker([41.4952500, -71.5268990], { 
+        title: "Stone Walls", 
+    }).addTo(map).bindPopup("<h1> Stone Walls </h1> <p> Stone walls are the most important artifacts in rural New England. The North Woods contains stone walls and rock outcroppings, characteristic of the rural New England landscape, which contribute a sense of place and identity, unique to the University of Rhode ISland’s geographic location. </p> <img src='https://images.squarespace-cdn.com/content/v1/54bfbf13e4b08839cc010a41/1555946134796-TK0062819X81XRMBNK61/stone-wall2.jpg?format=1500w' height='250px' width='300px' />" );
 
-    var marker = L.marker([41.491759, -71.532167], {icon: leafIcon}).addTo(map).bindPopup("<h1> Archaeological Survey </h1> <p> Towards the southwestern edge of the North Woods at the base of a hill is an aracheological survey site. This is a site of cultural importance as the area was used by the ancestral Narragansett for seasonal camps. </p> <img src='https://semspub.epa.gov/src/document/01/631414' height='250px' width='300px' />" );
+    var marker = L.marker([41.498646, -71.532743], {
+        title: "West Kingston Town Dump",
+    }).addTo(map).bindPopup("<h1> West Kingston Town Dump / URI Disposal Area </h1> <p> The North Woods is home to a reclaimed superfund site, the 18-acre West Kingston Town Dump/University of Rhode Island (URI) Disposal Area complex. The West Kingston Town Dump and the URI Disposal Area are the two sites that make up the facility. </p> <img src='https://semspub.epa.gov/src/document/01/631414' height='250px' width='300px' />" );
 
-    var marker = L.marker([41.494952, -71.530631], {icon: leafIcon}).addTo(map).bindPopup("<h1> Remnant Agriculture Structures </h1> <p> The North Woods contains remnant agriculture structures as well as drainage ditches that invite further archeological investigation. </p> <img src='https://semspub.epa.gov/src/document/01/631414' height='250px' width='300px' />" );
+    var marker = L.marker([41.491759, -71.532167], {
+        title: "Archaeological Survey", 
+    }).addTo(map).bindPopup("<h1> Archaeological Survey </h1> <p> Towards the southwestern edge of the North Woods at the base of a hill is an aracheological survey site. This is a site of cultural importance as the area was used by the ancestral Narragansett for seasonal camps. </p> <img src='https://semspub.epa.gov/src/document/01/631414' height='250px' width='300px' />" );
 
+    var marker = L.marker([41.494952, -71.530631], {
+        title: "Remnant Agricultural Structures", 
+    }).addTo(map).bindPopup("<h1> Remnant Agriculture Structures </h1> <p> The North Woods contains remnant agriculture structures as well as drainage ditches that invite further archeological investigation. </p> <img src='https://semspub.epa.gov/src/document/01/631414' height='250px' width='300px' />" );
 
 // create custom icon 
 var greenIcon = L.icon({
@@ -109,7 +132,7 @@ var greenIcon = L.icon({
 
     var marker = L.marker([41.4919000, -71.5184198], {icon: greenIcon}).addTo(map).bindPopup("<h1> North Woods Entrance </h1>"); 
 
-    var polygon = L.polygon([
+        var polygon = L.polygon([
         [41.491792, -71.536071],
         [41.490235, -71.524444],
         [41.489953, -71.523595],
@@ -574,12 +597,6 @@ var polyline = L.polyline([
     [41.4922031108, -71.526241572666], 
     [41.4921931364, -71.526269651966]
  ]).addTo(map).bindPopup("<h1>North Woods Trail System</h1>");
-
-</script>
-
-</body>
-
-</html>
 
 </script>
 
