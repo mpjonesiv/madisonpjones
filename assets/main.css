@@ -337,9 +337,11 @@ img {width: 40%;
 }
 
 .gridcolumn img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
+	margin-top: 8px;
+	vertical-align: middle;
+	width: 60%;
+	padding: 5px;
+	
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
