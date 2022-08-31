@@ -266,9 +266,9 @@ a.active {
 
 /* Sidebar/right column */
 .side {
-  flex: 20%; /* Set the width of the sidebar */
+  flex: 18%; /* Set the width of the sidebar */
   background-color: #f1f1f1; /* Grey background color */
-  padding: 20px; /* Some padding */
+  padding: 15px; /* Some padding */
 }
 
 /* ------------------Responsive Layout------------------ */
