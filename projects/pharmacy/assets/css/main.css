@@ -1648,11 +1648,13 @@ input, select, textarea {
 			text-transform: uppercase;
 				background-color: rgba(0,0,0,.5);
 				color: #fff;
-			  margin: auto;
-  width: 60%;
-  border: 1px solid #FFFFFF;
-  padding: 10px;
+			  	margin: auto;
+  				width: 40%;
+  				border: 1px solid #FFFFFF;
+  				padding: 10px;
 		}
+
+/* Note: I added indented text above to give the footer a similar look to the buttons. */
 
 		body.is-article-visible #footer {
 			-moz-transform: scale(0.95);
