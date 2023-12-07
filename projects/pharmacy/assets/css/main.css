@@ -1311,7 +1311,7 @@ input, select, textarea {
 				background-color: rgba(0,0,0,.5);
 				color: #fff;
 		}
- /* NOTE: I added background color and color attributes here */
+ /* NOTE: I added background color and color attributes above, offset by a tab */
 
 
 			#header .content .inner {
@@ -1646,6 +1646,12 @@ input, select, textarea {
 			opacity: 0.75;
 			margin-bottom: 0;
 			text-transform: uppercase;
+				background-color: rgba(0,0,0,.5);
+				color: #fff;
+			  margin: auto;
+  width: 60%;
+  border: 1px solid #FFFFFF;
+  padding: 10px;
 		}
 
 		body.is-article-visible #footer {
