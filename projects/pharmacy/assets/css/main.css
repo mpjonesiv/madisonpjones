@@ -1290,6 +1290,15 @@ input, select, textarea {
 				display: none;
 			}
 
+										#header .borderexample {
+										border-width:1px;
+										border-style:dotted;
+										border-color:#d3d3d3;
+										border-radius: 25px;
+										padding-left: 5px;
+										padding-right: 5px;
+										}
+
 		#header .logo {
 			width: 5.5rem;
 			height: 5.5rem;
