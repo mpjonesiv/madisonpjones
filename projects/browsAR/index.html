@@ -1,0 +1,26 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR.js Custom App</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@2.3.1/aframe/build/aframe-ar-nft.js"></script>
+</head>
+<body>
+    <a-scene embedded arjs>
+        <a-marker type="pattern" url="marker.patt">
+            <a-image src="sample.jpg" position="0 0 0" width="2" height="2" clickable></a-image>
+            <a-sound src="test.mp3" position="0 0 0" autoplay="false" clickable></a-sound>
+        </a-marker>
+    </a-scene>
+
+    <script>
+        document.querySelector('[clickable]').addEventListener('click', function() {
+            var sound = document.querySelector('a-sound');
+            sound.components.sound.playSound();
+        });
+    </script>
+</body>
+</html>
