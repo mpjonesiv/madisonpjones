@@ -1,53 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR.js Custom App</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ar.js@2.3.1/aframe/build/aframe-ar-nft.js"></script>
-</head>
-<body>
-    <a-scene embedded arjs>
-        <a-marker type="pattern" url="dwell.patt">
-            <a-image src="sample.jpg" position="0 0 0" width="2" height="2" clickable></a-image>
-            <a-sound src="test.mp3" position="0 0 0" autoplay="false" clickable></a-sound>
-        </a-marker>
-    </a-scene>
-
-    <script>
-        // Start AudioContext on user interaction
-        var audioContextStarted = false;
-
-        document.querySelector('[clickable]').addEventListener('click', function() {
-            if (!audioContextStarted) {
-                // Start AudioContext on the first user interaction
-                var audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                audioContextStarted = true;
-            }
-
-            // Get the sound element and play it
-            var sound = document.querySelector('a-sound');
-            sound.components.sound.playSound();
-        });
-    </script>
-
-    <!-- Additional script to handle MutationObserver error -->
-    <script>
-        // Example: Replace 'script.js' with the actual script file if needed
-        document.addEventListener('DOMContentLoaded', function() {
-            var observerTarget = document.querySelector('[clickable]');
+<html>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
+    <body style="margin: 0px; overflow: hidden;">
+        <a-scene embedded arjs>
+            <a-marker preset="hiro">
+                <a-entity
+                    position="0 0 0"
+                    rotation="0 0 0"
+                    scale="0.05 0.05 0.05"
+                    clickable
+                >
+                    <!-- Replace the GLTF model with an image entity -->
+                    <a-image src="sample.jpg" width="2" height="2"></a-image>
+                </a-entity>
+            </a-marker>
             
-            // Check if the observer target is a valid Node
-            if (observerTarget instanceof Node) {
-                var observer = new MutationObserver(function(mutationsList) {
-                    // Handle mutations here
-                });
+            <!-- Add a sound entity -->
+            <a-sound src="sound.mp3" position="0 0 0" autoplay="false" clickable></a-sound>
 
-                // Start observing mutations on the target
-                observer.observe(observerTarget, { attributes: true, childList: true, subtree: true });
-            }
-        });
-    </script>
-</body>
+            <!-- Camera entity -->
+            <a-entity camera></a-entity>
+        </a-scene>
+
+        <!-- Script to handle click event and play the sound -->
+        <script>
+            document.querySelector('[clickable]').addEventListener('click', function() {
+                var sound = document.querySelector('a-sound');
+                sound.components.sound.playSound();
+            });
+        </script>
+    </body>
 </html>
