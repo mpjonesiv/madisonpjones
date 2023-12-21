@@ -1,0 +1,65 @@
+<!doctype HTML>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+
+        <script src="components.js"></script>
+        
+    
+        <script> var sound = new Audio("seeram.mp3"); </script>
+        <script>
+            AFRAME.registerComponent('soundclick', {
+                init: function () {
+                    var el = this.el;
+
+                el.addEventListener('click', function() {
+                    if(el.getAttribute("sound_playing") == 'true'){
+                        sound.pause();
+                        console.log("I am clicked");
+                        el.setAttribute("sound_playing", "false");
+                        el.setAttribute('clicked', 'true');
+                    }
+                    else{
+                        sound.play();
+                        el.setAttribute("sound_playing", "true");
+                    }
+                });
+                }
+            });
+        </script>
+
+    </head>
+        <body style="margin: 0px; overflow: hidden;">
+            <a-scene embedded arjs id="scene">
+                <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" type="pattern" id = "hiro-marker" raycaster="objects: .clickable" url="pattern-Marker.patt">
+                    <a-image id="box" geometry="primitive: plane" src="flyer.png" rotation="-90 0 0" width="2" height="1.5" position='0 0 0' visible = 'false' sound_playing = 'false' class = 'clickable' clicked = 'false' soundclick></a-image>
+                </a-marker>
+                <a-entity camera ></a-entity>
+            </a-scene>
+            <script>
+                document.querySelector('a-marker').addEventListener('markerFound', function () {
+                    var box = document.querySelector('#box');
+                
+                    // Set the box to be visible when marker is found
+                    box.setAttribute('visible', 'true');
+                    if(box.getAttribute('sound_playing') == 'false' && box.getAttribute('clicked') == 'false'){
+                        sound.play();
+                        box.setAttribute('sound_playing', 'true');
+                        console.log(box.getAttribute('visible'));
+                    }
+
+                });
+            </script>
+            <script>
+                document.querySelector('a-marker').addEventListener('markerLost', function () {
+                    var box = document.querySelector('#box');
+                
+                    // Set the box to be visible when marker is found
+                    box.setAttribute('visible', 'false');
+                    console.log(box.getAttribute('visible'));
+                });
+            </script>
+        </body>
+</html>
