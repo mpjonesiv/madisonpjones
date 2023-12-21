@@ -1,4 +1,3 @@
-<!doctype html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,16 +9,44 @@
 </head>
 <body>
     <a-scene embedded arjs>
-        <a-marker type="pattern" url="marker.patt">
+        <a-marker type="pattern" url="dwell.patt">
             <a-image src="sample.jpg" position="0 0 0" width="2" height="2" clickable></a-image>
             <a-sound src="test.mp3" position="0 0 0" autoplay="false" clickable></a-sound>
         </a-marker>
     </a-scene>
 
     <script>
+        // Start AudioContext on user interaction
+        var audioContextStarted = false;
+
         document.querySelector('[clickable]').addEventListener('click', function() {
+            if (!audioContextStarted) {
+                // Start AudioContext on the first user interaction
+                var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                audioContextStarted = true;
+            }
+
+            // Get the sound element and play it
             var sound = document.querySelector('a-sound');
             sound.components.sound.playSound();
+        });
+    </script>
+
+    <!-- Additional script to handle MutationObserver error -->
+    <script>
+        // Example: Replace 'script.js' with the actual script file if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            var observerTarget = document.querySelector('[clickable]');
+            
+            // Check if the observer target is a valid Node
+            if (observerTarget instanceof Node) {
+                var observer = new MutationObserver(function(mutationsList) {
+                    // Handle mutations here
+                });
+
+                // Start observing mutations on the target
+                observer.observe(observerTarget, { attributes: true, childList: true, subtree: true });
+            }
         });
     </script>
 </body>
