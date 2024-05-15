@@ -48,6 +48,11 @@
 		-webkit-text-size-adjust: none;
 	}
 
+/* changing bg */
+.page-id-visualize {
+      background-image: url("images/overlay.png"), url("images/bg2.png"), url("images/bg.jpg");
+}
+
 /* Box Model */
 
 	*, *:before, *:after {
