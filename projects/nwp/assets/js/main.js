@@ -42,7 +42,17 @@
 					}
 				}
 			})
-			.on('+desktop', function() {
+			.on('+desktop', function() {var my_bgs = {
+
+			
+			// Change the values according to your needs
+	intro:'url("assets/css/images/bg01.png")',
+    methods:'url("assets/css/images/bg2.png")',
+    notes:'url("assets/css/images/bg3.png")',
+    map:'url("assets/css/images/bg4.png")',
+    conclusion:'url("assets/css/images/bg5.png")',
+    references:'url("assets/css/images/bg4.png")',
+}
 
 				var	$body = $('body'),
 					$main = $('#main'),
@@ -87,6 +97,8 @@
 						var t = $(this), id = t.attr('id');
 
 						panels[id] = t;
+						
+						panels[id].specialstyle = my_bgs[id];
 
 						if (i == 0) {
 
@@ -175,8 +187,10 @@
 
 							id = href.substring(1);
 
-							if (id in panels)
-								panels[id]._activate();
+							if (id in panels) {
+    panels[id]._activate();
+    document.body.style.backgroundImage = panels[id].specialstyle;
+}
 
 						}
 

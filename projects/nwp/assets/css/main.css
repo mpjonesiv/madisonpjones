@@ -26,7 +26,12 @@
 		line-height: 1;
 	}
 
-	ol, ul {
+	ol {
+	margin-left: 5%;
+	
+	}
+
+	ul {
 		list-style: none;
 	}
 
@@ -747,10 +752,13 @@
 /* Basic */
 
 
+/* NOTE TO SELF: I ADJUSTED THIS NEXT PART FROM ORIGINAL CSS TO MAKE CHANGING BG IN JS SOLUTION WORK */
+
 	body {
 		background-image: url("images/overlay.png"), url("images/bg4.png"), url("images/bg.jpg");
-		background-repeat: repeat, no-repeat;
-		background-size: auto, 100% 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 300;
 		color: #777777;
