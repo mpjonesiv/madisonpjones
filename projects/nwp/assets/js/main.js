@@ -46,12 +46,16 @@
 
 			
 			// Change the values according to your needs
-	intro:'url("assets/css/images/bg01.png")',
-    methods:'url("assets/css/images/bg2.png")',
+	home:'url("assets/css/images/bg4.png")',
+	intro:'url("assets/css/images/bg2.png")',		
+    methods:'url("assets/css/images/bg1.png")',
     notes:'url("assets/css/images/bg3.png")',
-    map:'url("assets/css/images/bg4.png")',
-    conclusion:'url("assets/css/images/bg5.png")',
-    references:'url("assets/css/images/bg4.png")',
+	herps:'url("assets/css/images/bg4.png")',
+    art:'url("assets/css/images/bg5.png")',
+	quilt:'url("assets/css/images/bg4.png")',
+	storywalk:'url("assets/css/images/bg3.png")',
+    conclusion:'url("assets/css/images/bg2.png")',
+    references:'url("assets/css/images/bg1.png")',
 }
 
 				var	$body = $('body'),
