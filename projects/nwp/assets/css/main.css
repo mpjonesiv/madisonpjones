@@ -1121,8 +1121,10 @@
 
 	#footer {
 		color: white;
-				
-	}
+		background-color: rgba(0, 0, 0, 0.1);
+}
+		
+	
 
 	#footer ul {
 					list-style-type: none;
