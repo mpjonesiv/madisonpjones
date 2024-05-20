@@ -35,6 +35,10 @@ document.getElementById(id).src=img;
 		
 	</head>
 	<body>
+		
+	<div id="loading">
+  <img id="loading-image" src="path/to/ajax-loader.gif" alt="Loading..." />
+</div>
 
 		<!-- Wrapper-->
 			<div id="wrapper">
@@ -779,7 +783,11 @@ document.getElementById(id).src=img;
 		
 		
 		
-		
+		<script>
+  $(window).on('load', function () {
+    $('#loading').hide();
+  }) 
+</script>
 		
 	</body>
 </html>
