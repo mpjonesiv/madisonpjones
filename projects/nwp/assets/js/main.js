@@ -52,7 +52,7 @@
     notes:'url("assets/css/images/bg3.png")',
 	herps:'url("assets/css/images/bg9.png")',
     art:'url("assets/css/images/bg7.png")',
-	quilt:'url("assets/css/images/bg6.jpg")',
+	quilt:'url("assets/css/images/bg6.png")',
 	storywalk:'url("assets/css/images/bg8.png")',
     conclusion:'url("assets/css/images/bg10.png")',
     references:'url("assets/css/images/bg11.png")',
