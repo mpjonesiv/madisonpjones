@@ -49,7 +49,7 @@
 	home:'url("assets/css/images/bg4.png")',
 	intro:'url("assets/css/images/bg3.png")',		
     methods:'url("assets/css/images/bg1.png")',
-    notes:'url("assets/css/images/bg12.jpg")',
+    notes:'url("assets/css/images/bg20.jpg")',
 	herps:'url("assets/css/images/bg9.png")',
     art:'url("assets/css/images/bg7.png")',
 	quilt:'url("assets/css/images/bg6.png")',
