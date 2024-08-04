@@ -271,6 +271,9 @@ a.active {
   padding: 15px; /* Some padding */
 }
 
+.side p {font-size: 17px;
+		font-weight: bold;}
+
 /* ------------------Responsive Layout------------------ */
 /* Responsive body - when the screen is less than 1275px wide, hide the second column */
 @media only screen and (max-width: 1275px) {
