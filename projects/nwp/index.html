@@ -842,20 +842,22 @@ document.getElementById(id).src=img;
 		
 		
 		
-<script>
-  // Check if the user is on a mobile device
-  if (/Mobi|Android/i.test(navigator.userAgent)) {
-    // Show a pop-up message for mobile users
-    alert("Please note that this project is primarily intended for desktop viewing. Mobile viewers will experience a nonoptimal version.");
-  } else {
-    // For non-mobile users, execute the original script
-    $(window).on('load', function () {
-      setTimeout(function() {
-        $('#loading').hide();
-      }, 1500); // Wait for 1500 milliseconds (1.5 seconds)
-    });
-  }
-</script>
+			<script>
+			  // Check if the user is on a mobile device
+			  if (/Mobi|Android/i.test(navigator.userAgent)) {
+				// Show a pop-up message for mobile users
+				alert("Please note that this project is primarily intended for desktop viewing. Mobile viewers will experience a nonoptimal version.");
+				// Hide the loading screen immediately for mobile users
+				$('#loading').hide();
+			  } else {
+				// For non-mobile users, execute the original script
+				$(window).on('load', function () {
+				  setTimeout(function() {
+					$('#loading').hide();
+				  }, 1500); // Wait for 1500 milliseconds (1.5 seconds)
+				});
+			  }
+			</script>
 		
 	</body>
 </html>
