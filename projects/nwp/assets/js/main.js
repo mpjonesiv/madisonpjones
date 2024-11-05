@@ -47,12 +47,12 @@
 			
 			// Change the values according to your needs
 	home:'url("assets/css/images/bg4.png")',
-	intro:'url("assets/css/images/bg3.png")',		
-    methods:'url("assets/css/images/bg1.png")',
+	intro:'url("assets/css/images/bg3.jpg")',		
+    methods:'url("assets/css/images/bg1.jpeg")',
     notes:'url("assets/css/images/bg20.jpg")',
 	herps:'url("assets/css/images/bg9.png")',
     art:'url("assets/css/images/bg7.png")',
-	renga:'url("assets/css/images/bg4.png")',
+	renga:'url("assets/css/images/bg5.jpeg")',
 	quilt:'url("assets/css/images/bg6.png")',
 	storywalk:'url("assets/css/images/bg8.png")',
     conclusion:'url("assets/css/images/bg10.png")',
