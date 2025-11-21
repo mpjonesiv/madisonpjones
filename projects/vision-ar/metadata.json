@@ -1,0 +1,8 @@
+{
+  "name": "Gemini Vision AR",
+  "description": "A real-time Augmented Reality assistant powered by Gemini. Point your camera at the world to analyze objects, translate text, and get instant AI insights.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
