@@ -1,40 +1,41 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { AROverlay } from './components/AROverlay';
-import { analyzeImageFrame } from './services/geminiService';
+import { analyzeImageFrame, GeminiLiveSession } from './services/geminiService';
 import { Message, ARMode } from './types';
 import { CameraOff } from 'lucide-react';
 
 const App: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const liveSessionRef = useRef<GeminiLiveSession | null>(null);
+  const liveIntervalRef = useRef<number | null>(null);
+
   const [messages, setMessages] = useState<Message[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const [hasPermission, setHasPermission] = useState<boolean | null>(null);
   const [mode, setMode] = useState<ARMode>(ARMode.IDLE);
   
-  // Voice recognition state
+  // Voice recognition state (Standard API)
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
-  const recognitionRef = useRef<any>(null); // Type as any for simplicity with Web Speech API
+  const recognitionRef = useRef<any>(null); 
 
   // Initialize Camera with Fallback Strategy
   useEffect(() => {
     const startCamera = async () => {
       if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-        console.error("navigator.mediaDevices.getUserMedia is not supported in this browser.");
         setHasPermission(false);
         return;
       }
 
       try {
-        // Attempt 1: Preferred settings (High Res, Back Camera)
         const stream = await navigator.mediaDevices.getUserMedia({
           video: {
             facingMode: { ideal: 'environment' },
-            width: { ideal: 1920 },
-            height: { ideal: 1080 }
+            width: { ideal: 1280 },
+            height: { ideal: 720 }
           },
-          audio: false
+          audio: false // We request audio separately for Live mode
         });
         
         if (videoRef.current) {
@@ -43,21 +44,16 @@ const App: React.FC = () => {
         }
       } catch (err) {
         console.warn("Preferred camera constraints failed:", err);
-        
         try {
-          // Attempt 2: Relaxed settings (Any Camera, Default Res)
-          console.log("Attempting fallback camera access...");
           const stream = await navigator.mediaDevices.getUserMedia({
             video: true,
             audio: false
           });
-
           if (videoRef.current) {
             videoRef.current.srcObject = stream;
             setHasPermission(true);
           }
         } catch (fallbackErr) {
-          console.error("Camera access completely denied:", fallbackErr);
           setHasPermission(false);
         }
       }
@@ -66,17 +62,23 @@ const App: React.FC = () => {
     startCamera();
 
     return () => {
-      // Cleanup streams on unmount
       if (videoRef.current && videoRef.current.srcObject) {
         const stream = videoRef.current.srcObject as MediaStream;
         stream.getTracks().forEach(track => track.stop());
       }
+      // Cleanup Live Session if active
+      if (liveSessionRef.current) {
+        liveSessionRef.current.disconnect();
+      }
+      if (liveIntervalRef.current) {
+        window.clearInterval(liveIntervalRef.current);
+      }
     };
   }, []);
 
-  // Initialize Speech Recognition
+  // --- Standard Speech Recognition (Non-Live) ---
   useEffect(() => {
-    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+    if (('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) && mode !== ARMode.LIVE) {
         const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
         recognitionRef.current = new SpeechRecognition();
         recognitionRef.current.continuous = true;
@@ -90,7 +92,7 @@ const App: React.FC = () => {
                     const finalTranscript = event.results[i][0].transcript;
                     setTranscript('');
                     setIsListening(false);
-                    handleCapture(finalTranscript); // Auto-submit on final voice command
+                    handleCapture(finalTranscript); 
                     recognitionRef.current.stop();
                 } else {
                     interimTranscript += event.results[i][0].transcript;
@@ -100,11 +102,10 @@ const App: React.FC = () => {
         };
 
         recognitionRef.current.onerror = (event: any) => {
-            console.error("Speech recognition error", event.error);
             setIsListening(false);
         };
     }
-  }, []);
+  }, [mode]);
 
   const toggleListening = () => {
     if (isListening) {
@@ -117,14 +118,79 @@ const App: React.FC = () => {
     }
   };
 
-  // Core Logic: Capture Frame & Send to Gemini
+  // --- Live Mode Logic ---
+  const handleLiveTranscript = useCallback((text: string, isUser: boolean) => {
+      // We can choose to show transcripts in the chat bubbling up
+      // For now, we just show the latest transiently or append if completed
+      if (isUser) {
+          setTranscript(text); // Show as subtitle
+      } else {
+          // Optional: Append model response to chat history slowly?
+          // For AR Live, we usually just listen. 
+          // Let's just append completed turns to keep the history alive.
+      }
+  }, []);
+
+  const toggleLiveMode = async () => {
+      if (mode === ARMode.LIVE) {
+          // Stop Live
+          if (liveSessionRef.current) {
+              liveSessionRef.current.disconnect();
+              liveSessionRef.current = null;
+          }
+          if (liveIntervalRef.current) {
+              window.clearInterval(liveIntervalRef.current);
+              liveIntervalRef.current = null;
+          }
+          setMode(ARMode.IDLE);
+          setMessages(prev => [...prev, {
+              id: Date.now().toString(),
+              role: 'system',
+              text: "Live session ended.",
+              timestamp: Date.now()
+          }]);
+      } else {
+          // Start Live
+          setMode(ARMode.LIVE);
+          setMessages([]); // Clear screen for live view
+          
+          try {
+              const session = new GeminiLiveSession(handleLiveTranscript);
+              await session.connect();
+              liveSessionRef.current = session;
+
+              // Start Video Loop (2 FPS)
+              liveIntervalRef.current = window.setInterval(() => {
+                  if (videoRef.current && canvasRef.current && liveSessionRef.current) {
+                      const video = videoRef.current;
+                      const canvas = canvasRef.current;
+                      canvas.width = video.videoWidth / 2; // Downscale for performance
+                      canvas.height = video.videoHeight / 2;
+                      const ctx = canvas.getContext('2d');
+                      if (ctx) {
+                          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                          const base64 = canvas.toDataURL('image/jpeg', 0.6);
+                          liveSessionRef.current.sendVideoFrame(base64);
+                      }
+                  }
+              }, 500);
+
+          } catch (e) {
+              console.error("Failed to start live session", e);
+              setMode(ARMode.IDLE);
+              alert("Could not connect to Gemini Live. Check console for details.");
+          }
+      }
+  };
+
+
+  // --- Snapshot Logic (Legacy) ---
   const handleCapture = useCallback(async (userPrompt: string) => {
     if (!videoRef.current || !canvasRef.current || isProcessing) return;
 
     const video = videoRef.current;
     const canvas = canvasRef.current;
     
-    // 1. Optimistic UI update
     const newUserMsg: Message = {
         id: Date.now().toString(),
         role: 'user',
@@ -136,22 +202,16 @@ const App: React.FC = () => {
     setMode(ARMode.ANALYZING);
 
     try {
-        // 2. Capture Frame
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
         const ctx = canvas.getContext('2d');
         if (!ctx) throw new Error("Could not get canvas context");
 
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        
-        // 3. Convert to Base64
-        // Lower quality (0.7) for faster transmission
         const base64Image = canvas.toDataURL('image/jpeg', 0.7);
 
-        // 4. Send to Gemini Service
         const aiResponseText = await analyzeImageFrame(base64Image, userPrompt);
 
-        // 5. Update UI with AI Response
         const newAiMsg: Message = {
             id: (Date.now() + 1).toString(),
             role: 'model',
@@ -165,7 +225,7 @@ const App: React.FC = () => {
         const errorMsg: Message = {
             id: (Date.now() + 1).toString(),
             role: 'system',
-            text: "Failed to analyze image. Please ensure the camera is active and try again.",
+            text: "Failed to analyze image.",
             timestamp: Date.now()
         };
         setMessages(prev => [...prev, errorMsg]);
@@ -196,10 +256,8 @@ const App: React.FC = () => {
 
   return (
     <div className="relative h-screen w-screen bg-black overflow-hidden">
-      {/* Hidden Canvas for frame capture */}
       <canvas ref={canvasRef} className="hidden" />
-
-      {/* Video Feed Layer */}
+      
       <video
         ref={videoRef}
         autoPlay
@@ -208,7 +266,6 @@ const App: React.FC = () => {
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
 
-      {/* AR HUD Layer */}
       <AROverlay 
         mode={mode}
         messages={messages}
@@ -217,6 +274,7 @@ const App: React.FC = () => {
         transcript={transcript}
         isListening={isListening}
         onToggleListening={toggleListening}
+        onToggleLive={toggleLiveMode}
       />
     </div>
   );

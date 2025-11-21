@@ -9,6 +9,7 @@ export enum ARMode {
   IDLE = 'IDLE',
   ANALYZING = 'ANALYZING',
   CHATTING = 'CHATTING',
+  LIVE = 'LIVE',
 }
 
 export interface AnalysisResult {
