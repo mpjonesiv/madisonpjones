@@ -11,7 +11,7 @@
 	}
 
 p, dd, dt {
-    padding-right: 6%;
+    padding-right: 1%;
     font-size: 20px
     
 }
@@ -155,12 +155,21 @@ a.anchor{display: block; position: relative; top: -100px; visibility: hidden;}
   background-color: grey;
 }
 
+/* Responsive site using media queries */
 
-/* If the screen size is 1000px wide or more, set the menu font-size to large */
-@media screen and (min-width: 1001px) {
+/* Large desktop */
+@media screen and (min-width: 1401px) {
   #navbar a {
-      padding: 14px 20px; /* Add some padding */
+      padding: 14px 20px;
       font-size: 22px;
+  }
+}
+
+/* Laptop / smaller desktop */
+@media screen and (min-width: 1001px) and (max-width: 1400px) {
+  #navbar a {
+      padding: 12px 14px;
+      font-size: 18px;
   }
 }
 
@@ -208,9 +217,12 @@ a.active {
 }
 
 .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+   position: fixed;
+    top: 0;
+    left: 8px;
+    right: 8px;
+    width: auto;
+    z-index: 1000;
 }
 
 .sticky + .content {
@@ -243,7 +255,7 @@ a.active {
 }
 
 /* Responsive dropnav - when the screen is less than 1200px wide, hide the dropdown */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1199px) {
     .dropnav-content {
         display: none;
     }
@@ -282,14 +294,14 @@ a.active {
 		font-weight: bold;}
 
 /* ------------------Responsive Layout------------------ */
-/* Responsive body - when the screen is less than 1275px wide, hide the second column */
-@media only screen and (max-width: 1275px) {
+/* Responsive body - when the screen is less than 1450px wide, hide the second column */
+@media only screen and (max-width: 1450px) {
     .side {display: none;
         }
 }
 /* ------------------FIX ERROR IN Responsive Layout??------------------ */
 
-@media only screen and (max-width: 1275px) {
+@media only screen and (max-width: 1450px) {
   .main {
     flex: 100%;
     max-width: 100%;
@@ -313,7 +325,7 @@ ul {
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
-  .navbar a {
+  #navbar a {
     float: none;
     width: 100%;
   }
